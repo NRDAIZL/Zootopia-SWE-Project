@@ -17,9 +17,12 @@
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
   }
+  select.selectt{
+    background-color: #be5e5e;
+    color: white;
+    padding: 6px;
+    font-size: 16px;
+    border:none;
+    cursor: pointer;
+  }
   
-  /* p {
-    font-family: verdana;
-    font-size: 20px;
-  } */
-

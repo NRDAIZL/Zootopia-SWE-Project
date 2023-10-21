@@ -13,7 +13,8 @@
     <!-- <form action="/action_page.php"> -->
       <br><br>
       <label for="apday" class="choose">Choose a day:</label>
-      <select name="apday" id="apday" onchange="updateaptime()">
+      <select class="selectt" name="apday" id="apday" onchange="updateaptime()">
+        <div class="optionn">
         <option value="0">select day</option>
         <option value="sun">sunday</option>
         <option value="mon">monday</option>
@@ -22,15 +23,18 @@
         <option value="thurs">thursday</option>
         <option value="fri">friday</option>      
         <option value="satur">saturday</option>
+
+      </div>
       </select>
       <br><br>
 
       <label for="aptime" class="choose">Choose time:</label>
-      <select name="aptime" id="aptime">
-        <option value="0">select time</option>
+      <select class="selectt" name="aptime" id="aptime">
+        <option class="optionn" value="0">select time</option>
         
       </select>
       <br><br>
+      <button class="apbtn">submit the booking</button>
       <!-- <input type="submit" value="Submit"> -->
     <!-- </form> -->
     
