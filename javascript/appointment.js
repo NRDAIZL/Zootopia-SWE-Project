@@ -6,8 +6,21 @@ var timewends=["6:00","7:00","8:00"]
 var timethurs=["1:00","2:00"]
 var timefri=["3:00"]
 var timesatur=["10:00"]
+
+function openForm() {
+    console.log("hi here")
+    if (document.getElementById("myForm").style.display == "none")
+      document.getElementById("myForm").style.display = "block";
+    else
+    document.getElementById("myForm").style.display = "none";
+   
+  }
+
+
 function updateaptime()
 {
+    
+
     var apday1=document.getElementById("apday").value
    // alert(apday1)
    document.getElementById("aptime").options.length=1

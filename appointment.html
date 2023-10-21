@@ -4,13 +4,15 @@
   <meta charset="UTF-8">
   <title>book an appointment</title>
   <script src="javascript/appointment.js"></script>
+  <link rel="stylesheet" href="css/appointment.css">
 </head>
 <body>
 
     <!-- <p>The select element is used to create a drop-down list.</p> -->
     
     <!-- <form action="/action_page.php"> -->
-      <label for="apday">Choose a day:</label>
+      <br><br>
+      <label for="apday" class="choose">Choose a day:</label>
       <select name="apday" id="apday" onchange="updateaptime()">
         <option value="0">select day</option>
         <option value="sun">sunday</option>
@@ -23,7 +25,7 @@
       </select>
       <br><br>
 
-      <label for="aptime">Choose time:</label>
+      <label for="aptime" class="choose">Choose time:</label>
       <select name="aptime" id="aptime">
         <option value="0">select time</option>
         
