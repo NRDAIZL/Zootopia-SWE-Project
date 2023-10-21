@@ -31,7 +31,7 @@ body{
 nav{
     height: 80px;
     width:100%;
-    background: #34495e;
+    background: #000000;
 }
 label.logo{
     font-size: 35px;
@@ -92,7 +92,7 @@ display: none;
         position: fixed;
         width: 100%;
         height: 100vh;
-        background: #2f3640 ;
+        background: #000000 ;
         top: 80px;
         left: 0;
         text-align: center;
@@ -107,7 +107,7 @@ display: none;
     }
     a.homee, a:hover{
         border: none;
-        color: #3498db;
+        color: #ffffff;
     }
 }
 
