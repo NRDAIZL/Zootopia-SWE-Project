@@ -63,7 +63,7 @@
 </head>
 
 <body>
-<?php include 'includes/menu.php';?>
+<?php include '../includes/menu.php';?>
 
     <input type="text" id="datepicker-check-in" placeholder="Check-in date">
     <input type="text" id="datepicker-check-out" placeholder="Check-out date">
@@ -77,6 +77,7 @@
 <html>
 
 <head>
+<link rel="stylesheet" href="css/menu.css?v=<?php echo time(); ?>">
     <title>Pet Hotel Booking Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>

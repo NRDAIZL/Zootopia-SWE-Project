@@ -21,10 +21,12 @@
    
     <!-- <div class="row"> -->
       <!-- <div class="col-25"> -->
+        <br><br>
         <label for="pettype" class="choose">Pet type:</label>
       <!-- </div> -->
       <!-- <div class="col-75"> -->
         <select id="pettypeid" class="selectt" name="pettype" class="pettypee">
+        <div class="optionn">
           <option value="dog">Dog</option>
           <option value="cat">Cat</option>
           <option value="rabbit">Rabbit</option>
@@ -35,6 +37,7 @@
           <option value="hamster">Hamster</option>
           <option value="reptile">Reptile</option>
           <option value="other">Other</option>
+        </div>
         </select>
       <!-- </div> -->
     <!-- </div> -->
