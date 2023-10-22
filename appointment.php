@@ -4,10 +4,13 @@
   <meta charset="UTF-8">
   <title>book an appointment</title>
   <script src="javascript/appointment.js"></script>
-  <link rel="stylesheet" href="css/appointment.css">
+  <link rel="stylesheet" href="css/appointment.css?v=<?php echo time(); ?>">
+  <link rel="stylesheet" href="css/menu.css?v=<?php echo time(); ?>">
+  
+  
 </head>
 <body>
-
+  <?php include './includes/menu.php';?>
     <!-- <p>The select element is used to create a drop-down list.</p> -->
     
     <!-- <form action="/action_page.php"> -->
@@ -28,6 +31,10 @@
           <option value="fish">Fish</option>
           <option value="bird">Bird</option>
           <option value="turtle">Turtle</option>
+          <option value="horse">Horse</option>
+          <option value="hamster">Hamster</option>
+          <option value="reptile">Reptile</option>
+          <option value="other">Other</option>
         </select>
       <!-- </div> -->
     <!-- </div> -->

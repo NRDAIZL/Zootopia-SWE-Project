@@ -63,7 +63,7 @@
 </head>
 
 <body>
-<?php include 'includes/menu.html';?>
+<?php include 'includes/menu.php';?>
 
     <input type="text" id="datepicker-check-in" placeholder="Check-in date">
     <input type="text" id="datepicker-check-out" placeholder="Check-out date">
@@ -149,7 +149,7 @@
 </head>
 
 <body>
-    <?php include 'includes/menu.html';?>
+    <?php include 'includes/menu.php';?>
     <div class="booking-form">
         <h1>Pet Hotel Booking Form</h1>
 
