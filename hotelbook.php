@@ -63,6 +63,8 @@
 </head>
 
 <body>
+<?php include 'includes/menu.html';?>
+
     <input type="text" id="datepicker-check-in" placeholder="Check-in date">
     <input type="text" id="datepicker-check-out" placeholder="Check-out date">
     <input type="number" id="number-of-nights" placeholder="Number of nights">
@@ -78,8 +80,8 @@
     <title>Pet Hotel Booking Form</title>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
-    <script>
-        $(document).ready(function() {
+     <script>
+    $(document).ready(function() {
             $("#datepicker-check-in").datepicker({
                 minDate: new Date(),
                 maxDate: "+1y",
@@ -101,14 +103,14 @@
                 updateNumberOfNights();
             });
 
-            // Calculate the number of nights between the two selected dates
+                        // Update the number of nights input field with the calculated number of nights
+// Calculate the number of nights between the two selected dates
             function calculateNights(checkInDate, checkOutDate) {
                 const oneDay = 1000 * 60 * 60 * 24;
                 const diffInDays = (checkOutDate - checkInDate) / oneDay;
                 return Math.floor(diffInDays);
             }
 
-            // Update the number of nights input field with the calculated number of nights
 
             function updateNumberOfNights() {
                 const checkInDate = $("#datepicker-check-in").datepicker("getDate");
@@ -117,7 +119,7 @@
                 $("#number-of-nights-display").text(numberOfNights);
             }
         });
-    </script>
+    </script> 
     <style>
         .booking-form {
             width: 500px;
@@ -152,7 +154,7 @@
         <h1>Pet Hotel Booking Form</h1>
 
         <input type="text" id="datepicker-check-in" placeholder="Check-in date">
-        <input type="text" id="datepicker-check-out" placeholder="Check-out date"> Number of nights:
+        <input type="text" id="datepicker-check-out" placeholder="Check-out date"> Number of nights: 
         <div id="number-of-nights-display"></div>
 
         <button type="submit">Book Now</button>
