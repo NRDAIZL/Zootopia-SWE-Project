@@ -1,6 +1,7 @@
 body{
     background-color: white;
 }
+
  /* .apbox{
     position: fixed;
     bottom: 20px;
@@ -26,9 +27,11 @@ body{
     
 }
 
+
 body{
     font-family: montserrat;
 }
+
 nav{
     height: 60px;
     width:100%;
@@ -59,11 +62,20 @@ nav a{
     padding: 7px 10px;
     border-radius: 3px;
 }
-/*  */
-a.homee,a:hover{
+/*  , .ho:active, .ho.clicked, .ho:focus*/
+.ho:hover{
+    border: 1px solid white;
+    transition: .5s; 
+
+} 
+
+/* {
     border: 1px solid white;
     transition: .5s;
-}
+} */
+
+
+
 nav #icon{
     color: white;
     font-size: 30px;
