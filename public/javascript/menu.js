@@ -1,5 +1,5 @@
 function clickInner() {
     // alert("hi");
-    window.location.href='../appointment.php';
-   
+    window.location.href = '../../views/user/appointment.php';
+
 };

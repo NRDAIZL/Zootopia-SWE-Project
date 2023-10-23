@@ -1,29 +1,28 @@
-    /* Datepicker calendar container */
-    
-    .ui-datepicker {
-        font-size: 14px;
-        background-color: red;
-    }
-    /* Header styling */
-    
-    .ui-datepicker-header {
-        background-color: #000;
-        color: #fff;
-    }
-    /* Day cell styling */
-    
-    .ui-state-default {
-        background-color: #f5f5f5;
-    }
-    /* Hover state for day cell */
-    
-    .ui-state-default:hover {
-        background-color: #e0e0e0;
-    }
-    /* Selected day styling */
-    
-    .ui-state-active {
-        background-color: #ffa500;
-        /* Orange color for selected day */
-        color: #fff;
-    }
+.ui-datepicker {
+    font-size: 16px;
+    background-color: #fff;
+    font-family: 'Roboto', sans-serif;
+}
+
+.ui-datepicker-header {
+    background-color: #000;
+    color: #fff;
+}
+
+.ui-state-default {
+    background-color: #f5f5f5;
+}
+
+.ui-state-default:hover {
+    background-color: #e0e0e0;
+}
+
+.ui-state-active {
+    color: #fff;
+    background-color: red;
+}
+
+.ui-datepicker-calendar td.ui-datepicker-unselectable {
+    opacity: 0.5;
+    /* or background-color: #ccc; or text-decoration: line-through; */
+}
