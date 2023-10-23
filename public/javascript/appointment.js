@@ -77,6 +77,15 @@ function updateaptime()
     }
 }
 
+// var pettype1=document.getElementById("pettypeid").value
+function apvalidate(){
+    alert("hiiiiiiiiii")
+    console.log("hihelloo")
+    return true
+    // if(pettype1=="0"){
+    //     alert(puttt)
+    // }
+}
 
 
 

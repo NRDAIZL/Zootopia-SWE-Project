@@ -15,7 +15,8 @@
     <!-- <form action="/action_page.php"> -->
 <!-- ///////////////////// -->
 <div class="container">
-  <!-- <form action="action_page.php"> -->
+<!-- action="apvalidate()" -->
+  <form onsubmit="return apvalidate()" >
     
    
     <!-- <div class="row"> -->
@@ -24,8 +25,10 @@
         <label for="pettype" class="choose">Pet type:</label>
       <!-- </div> -->
       <!-- <div class="col-75"> -->
-        <select id="pettypeid" class="selectt" name="pettype" class="pettypee">
+        <select id="pettypeid" class="selectt" name="pettype" class="pettypee"  required>
         <div class="optionn">
+
+        <option value="0">select pet</option>
           <option value="dog">Dog</option>
           <option value="cat">Cat</option>
           <option value="rabbit">Rabbit</option>
@@ -47,7 +50,7 @@
         <label for="petname" class="choose">Pet Name:</label>
       <!-- </div> -->
       <!-- <div class="col-75"> -->
-        <input type="text" id="petnameid" name="petname" placeholder="Your pet name ;) " class="petnamee">
+        <input type="text" id="petnameid" name="petname" placeholder="Your pet name ;) " class="optionn" >
       <!-- </div> -->
     <!-- </div> -->
 
@@ -56,9 +59,9 @@
 
       <br><br>
       <label for="apday" class="choose">Choose a day:</label>
-      <select class="selectt" name="apday" id="apday" onchange="updateaptime()">
+      <select class="selectt" name="apday" id="apday" onchange="updateaptime()" required>
         <div class="optionn">
-        <option value="0">select day</option>
+        <option value="">select day</option>
         <option value="sun">sunday</option>
         <option value="mon">monday</option>
         <option value="tues">tuesday</option>
@@ -72,17 +75,18 @@
       <br><br>
 
       <label for="aptime" class="choose">Choose time:</label>
-      <select class="selectt" name="aptime" id="aptime">
+      <select class="selectt" name="aptime" id="aptime" required>
         <option class="optionn" value="0">select time</option>
         
       </select>
       <br><br>
-      <a href="confirmappt.html">
-        <button class="apbtn">submit the booking</button>
-    </a>
+      <!-- <a href="confirmappt.html"> -->
+        <!-- <input type="submit" class="apbtn" id="apbtn" value="submit the booking"> -->
+        <button class="apbtn" id="apbtn" type="submit"> Submit  </button>
+    <!-- </a> -->
       
        
-  <!-- </form> -->
+  </form>
 </div>
       <!-- <input type="submit" value="Submit"> -->
     <!-- </form> -->

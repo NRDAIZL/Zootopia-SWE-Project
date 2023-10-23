@@ -25,18 +25,27 @@
   }
 
   .apbtn{
-  width: 8cm;
+  width: 6cm;
             padding: 10px;
             margin-bottom: 10px;
             background-color: #000;
             color: #fff;
-            cursor: pointer;
-            margin-left: 10cm;
+            cursor: pointer;  
 
   }
 
-  *{
- text-align: center;
+  /* zy margin left  */
+  /* #apbtn{
+    position:relative;  left:6cm; 
+  } */
+
+  /* * {
+ 
 
 
-  }
+  } */
+
+  *:not(.apbtn ){
+    
+    text-align: center;
+}

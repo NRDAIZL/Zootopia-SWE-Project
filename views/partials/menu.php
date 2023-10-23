@@ -18,7 +18,7 @@
             <li><a class="homee" href="#">Home</a></li>
             <li><a class="ho" href="#">About</a></li>
             <li><a class="ho" href="#">Registration</a></li>
-            <li><a class="ho" href="#" onClick="clickInner('appointment.php');">Book an appointment</a></li>
+            <li><a class="ho" href="../../views/user/appointment.php"> Book an appointment</a></li>
             <li><a class="ho" href="#">Services</a></li>
         </ul>
         <label id="icon">
