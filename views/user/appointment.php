@@ -5,10 +5,13 @@
   <title>book an appointment</title>
   <script src="javascript/appointment.js"></script>
   <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
-  
+  <?php
+  include_once "../../config/dbh.inc.php";
+?>
   
 </head>
 <body>
+  
 <?php include '../partials/menu.php';?>
     <!-- <p>The select element is used to create a drop-down list.</p> -->
     
