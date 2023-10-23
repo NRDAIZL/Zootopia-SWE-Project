@@ -1,4 +1,6 @@
-
+<?php
+  include_once "../../config/dbh.inc.php";
+?>
 <!DOCTYPE html>
 <html>
 
@@ -43,19 +45,21 @@
 <?php include '../partials/menu.php'; ?>
     <div class="booking-form">
         <h1>Pet Hotel Booking Form</h1>
-        <form>
+        <form action="" method="post">
         <label>
         <input type="radio" name="booking-type" value="daycare" checked>
         Daycare
-    </label>
+        </label>
 
     <label>
         <input type="radio" name="booking-type" value="overnight">
         Overnight
     </label>
     
-        <input type="text" id="datepicker-check-in" placeholder="Check-in date">
-        <input type="text" id="datepicker-check-out" placeholder="Check-out date">
+    <input type="text" id="datepicker-check-in" name= "datepicker-check-in" placeholder="Check-in date">
+    <input type="text" id="datepicker-check-out" name= "datepicker-check-out" placeholder="Check-out date">
+    <!-- <input type="date"  name= "datepicker-check-in" placeholder="Check-in date">
+        <input type="date"  name= "datepicker-check-out" placeholder="Check-out date"> -->
          <label for="number-of-nights-display"> Number of nights:</label>
 
         <div id="number-of-nights-display"></div>
@@ -76,12 +80,43 @@
         <input type="radio" name="gender" value="female"> Female
     </label>
 
-        <button type="submit">Book Now</button>
+        <button type="submit" value="Submit" name="Submit">Book Now</button>
         </form>
         
     </div>
+    <?php
+// Grap data from user if form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get data from the form
+    $bookingType = mysqli_real_escape_string($conn, $_POST['booking-type']);
+    $checkInDate = mysqli_real_escape_string($conn, $_POST['datepicker-check-in']);
+    $checkOutDate = mysqli_real_escape_string($conn, $_POST['datepicker-check-out']);
+
+    // Convert the dates to the correct format
+    $checkInDate = date_format(date_create_from_format("m/d/Y", $checkInDate), "Y-m-d");
+    $checkOutDate = date_format(date_create_from_format("m/d/Y", $checkOutDate), "Y-m-d");
+
+    // Escape the animal type and pet gender
+    $animalType = mysqli_real_escape_string($conn, $_POST['animal-type']);
+    $petGender = mysqli_real_escape_string($conn, $_POST['gender']);
+
+    // Create an SQL query to insert the data
+    $sql = "INSERT INTO bookings (booking_type, check_in_date, check_out_date, animal_type, pet_gender)
+            VALUES ('$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender')";
+
+    // Perform the query
+    try {
+        mysqli_query($conn, $sql);
+        echo "Booking successfully added to the database.";
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    } finally {
+        mysqli_close($conn);
+    }
+}
+?>
+
 </body>
 
 </html>
 
-</html>
