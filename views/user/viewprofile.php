@@ -92,7 +92,7 @@ button {
 <div class="pr">
         <div class="im">
             <div class="im1">
-        <img src="istockphoto-1300845620-612x612.jpg">
+        <img src="../../public/images/istockphoto-1300845620-612x612.jpg">
         <ul>
         <li>Ahmed Mohamed</li>
         <button type="button">Back</button>

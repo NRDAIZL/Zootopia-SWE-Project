@@ -45,7 +45,6 @@
 
   } */
 
-  *:not(.apbtn ){
-    
+  *:not(img){
     text-align: center;
 }
