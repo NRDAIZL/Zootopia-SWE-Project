@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel ="stylesheet" , href="profile.css"/>
+<link rel ="stylesheet" , href="../../public/css/profile.css"/>
 	<title>Profile</title>
     <style>
         
@@ -89,6 +89,8 @@ button {
    </style>
 </head>
 <body>
+<?php include '../partials/menu.php'; ?>
+
 <div class="pr">
         <div class="im">
             <div class="im1">
