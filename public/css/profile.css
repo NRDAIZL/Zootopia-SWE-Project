@@ -1,0 +1,20 @@
+.name3{
+    display: flex;
+}
+.username{
+    display: inline;
+
+}
+
+label {
+    font-family: 'Courier New', Courier, monospace;
+}
+ image {
+    border-radius: 50%;
+    border: 2px solid red;
+    height: 250px;
+    width: 250px;
+    padding: 30px 30px;
+     border-radius: 20px;
+ }
+ 
