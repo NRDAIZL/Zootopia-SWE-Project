@@ -4,15 +4,15 @@
 <head>
     <meta charset="utf-8">
     <title>zootopia clinic</title>
-    <link rel="stylesheet" href="../css/menu.css?v=<?php echo time(); ?>">
-    <script src="../javascript/menu.js?v=<?php echo time(); ?>"></script>
+    <link rel="stylesheet" href="../../public/css/menu.css?v=<?php echo time(); ?>">
+    <script src="../../public/javascript/menu.js?v=<?php echo time(); ?>"></script>
     <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
 </head>
 
 <body>
 
     <nav>
-        <img src="../images/logo.png" class="logo" alt="the clinic logo"></img>
+        <img src="../../public/images/logo.png" class="logo" alt="the clinic logo"></img>
     
         <ul>
             <li><a class="homee" href="#">Home</a></li>
