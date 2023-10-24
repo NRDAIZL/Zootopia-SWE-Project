@@ -3,7 +3,7 @@
 <head>
     
     <title>Zootpia Home Page</title>
-    <link rel= "stylesheet" href="designHome.css"/>
+    <link rel= "stylesheet" href="../../public/css/designHome.css"/>
 </head>
 
 <body>
