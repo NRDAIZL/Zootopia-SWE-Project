@@ -46,7 +46,8 @@
 <?php include '../partials/menu.php'; ?>
     <div class="booking-form">
         <h1>Pet Hotel Booking Form</h1>
-        <form onsubmit="return validateForm();" action="" method="post">
+        <form onsubmit="return validateForm();" action="confirmhotel.php" method="post">
+
         <label>
         <input type="radio" name="booking-type" value="daycare" checked>
         Daycare
@@ -86,40 +87,11 @@
         
     </div>
     <?php
-// Grab data from user if form was submitted
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    // Get data from the form
-    $bookingType = mysqli_real_escape_string($conn, $_POST['booking-type']);
-    $checkInDate = mysqli_real_escape_string($conn, $_POST['datepicker-check-in']);
-    $checkOutDate = isset($_POST['datepicker-check-out']) ? mysqli_real_escape_string($conn, $_POST['datepicker-check-out']) : null;
+// // Grab data from user if form was submitted
+// if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+//     header('Location: confirmhotel.php');
 
-    // If the booking type is daytime, then the check-out date is not required
-    if ($bookingType === 'daycare') {
-        $checkOutDate = null;
-    }
-
-    // Convert the dates to the correct format
-    $checkInDate = date_format(date_create_from_format("m/d/Y", $checkInDate), "Y-m-d");
-    $checkOutDate = $checkOutDate === null ? '' : date_format(date_create_from_format("m/d/Y", $checkOutDate), "Y-m-d");
-
-    // Escape the animal type and pet gender
-    $animalType = mysqli_real_escape_string($conn, $_POST['animal-type']);
-    $petGender = mysqli_real_escape_string($conn, $_POST['gender']);
-
-    // Create an SQL query to insert the data
-    $sql = "INSERT INTO bookings (booking_type, check_in_date, check_out_date, animal_type, pet_gender)
-            VALUES ('$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender')";
-
-    // Perform the query
-    try {
-        mysqli_query($conn, $sql);
-        echo "Booking successfully added to the database.";
-    } catch (Exception $e) {
-        echo "Error: " . $e->getMessage();
-    } finally {
-        mysqli_close($conn);
-    }
-}
+// }
 ?>
 
 

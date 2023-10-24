@@ -33,3 +33,12 @@ function validateForm() {
     // If the form is valid, return true
     return true;
 }
+
+function calculateNights(checkInDate, checkOutDate) {
+    if (checkInDate && checkOutDate) {
+        const oneDay = 1000 * 60 * 60 * 24;
+        const diffInDays = (checkOutDate - checkInDate) / oneDay;
+        return Math.floor(diffInDays);
+    }
+    return 0; // Return 0 if either check-in or check-out date is missing
+}
