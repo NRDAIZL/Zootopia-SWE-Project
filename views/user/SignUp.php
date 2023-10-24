@@ -7,7 +7,7 @@
 <html>
    <head>
      <title>Sign Up</title>
-     <link rel= "stylesheet" href="designSignup.css"/>
+     <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
    </head>
 
    <body>
