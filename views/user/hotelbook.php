@@ -7,6 +7,7 @@
 <head>
     <title>Pet Hotel Booking Form</title>
     <link rel="stylesheet" href="../../public/css/calendar.css">
+    <script src="../../public/javascript/hotel.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
@@ -45,7 +46,7 @@
 <?php include '../partials/menu.php'; ?>
     <div class="booking-form">
         <h1>Pet Hotel Booking Form</h1>
-        <form action="" method="post">
+        <form onsubmit="return validateForm();" action="" method="post">
         <label>
         <input type="radio" name="booking-type" value="daycare" checked>
         Daycare
@@ -90,11 +91,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
     $bookingType = mysqli_real_escape_string($conn, $_POST['booking-type']);
     $checkInDate = mysqli_real_escape_string($conn, $_POST['datepicker-check-in']);
-    $checkOutDate = mysqli_real_escape_string($conn, $_POST['datepicker-check-out']);
+    $checkOutDate = isset($_POST['datepicker-check-out']) ? mysqli_real_escape_string($conn, $_POST['datepicker-check-out']) : null;
+
+    // If the booking type is daytime, then the check-out date is not required
+    if ($bookingType === 'daycare') {
+        $checkOutDate = null;
+    }
 
     // Convert the dates to the correct format
     $checkInDate = date_format(date_create_from_format("m/d/Y", $checkInDate), "Y-m-d");
-    $checkOutDate = date_format(date_create_from_format("m/d/Y", $checkOutDate), "Y-m-d");
+    $checkOutDate = $checkOutDate === null ? '' : date_format(date_create_from_format("m/d/Y", $checkOutDate), "Y-m-d");
 
     // Escape the animal type and pet gender
     $animalType = mysqli_real_escape_string($conn, $_POST['animal-type']);
@@ -115,6 +121,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
 
 </body>
 
