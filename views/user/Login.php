@@ -20,7 +20,7 @@
 
  <?php
    session_start();
-   include_once "includes/DataBase.php";
+   include_once "../../config/dbh.inc.php";
    //grab data from user and see if it exists in database
    if($_SERVER["REQUEST_METHOD"]=="POST"){
 
@@ -28,14 +28,14 @@
 	$Password=$_POST["Password"];
 	$sql="Select * from users where Email ='$Email' and Password='$Password'";
 	$result = mysqli_query($conn,$sql);
-    if($row=mysqli_fetch_array($result))	{
+    if($row=mysqli_fetch_array($result))	{ //fetching the user data
 		$_SESSION["ID"]=$row[0];
 		$_SESSION["FName"]=$row["FirstName"];
 		$_SESSION["LName"]=$row["LastName"];
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		
-		header("Location:Home.php?login=success");
+		header("Location:../../user/Home.php?login=success");
 	}
 	else	{
 		echo "Invalid Email or Password";

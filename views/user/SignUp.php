@@ -1,5 +1,5 @@
 <?php
-  include_once "includes/DataBase.php";
+  include_once "../../config/dbh.inc.php";
 ?>
 
 
@@ -7,7 +7,7 @@
 <html>
    <head>
      <title>Sign Up</title>
-     <link rel= "stylesheet" href="designSignup.css"/>
+     <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
    </head>
 
    <body>
