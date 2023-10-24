@@ -85,7 +85,7 @@
         
     </div>
     <?php
-// Grap data from user if form was submitted
+// Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
     $bookingType = mysqli_real_escape_string($conn, $_POST['booking-type']);
