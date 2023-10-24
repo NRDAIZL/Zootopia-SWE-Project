@@ -7,14 +7,14 @@ var timethurs=["1:00","2:00"]
 var timefri=["3:00"]
 var timesatur=["10:00"]
 
-function openForm() {
-    console.log("hi here")
-    if (document.getElementById("myForm").style.display == "none")
-      document.getElementById("myForm").style.display = "block";
-    else
-    document.getElementById("myForm").style.display = "none";
+// function openForm() {
+//     console.log("hi here")
+//     if (document.getElementById("myForm").style.display == "none")
+//       document.getElementById("myForm").style.display = "block";
+//     else
+//     document.getElementById("myForm").style.display = "none";
    
-  }
+//   }
 
 
 function updateaptime()

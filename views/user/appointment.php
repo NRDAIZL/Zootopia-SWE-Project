@@ -18,8 +18,10 @@
     <!-- <form action="/action_page.php"> -->
 <!-- ///////////////////// -->
 <div class="container">
-<!-- action="apvalidate()" -->
-  <form onsubmit="return apvalidate()" action="" method="post">
+<!-- action="apvalidate()" 
+onsubmit="return apvalidate()"
+-->
+  <form  action="" method="post">
     
    
     <!-- <div class="row"> -->
@@ -85,10 +87,10 @@
         
       </select>
       <br><br>
-      <!-- <a href="confirmappt.html"> -->
+      <a href="./confirmappt.php">
         <!-- <input type="submit" class="apbtn" id="apbtn" value="submit the booking"> -->
         <button class="apbtn" id="apbtn" type="submit"> Submit </button>
-    <!-- </a> -->
+    </a>
       
        
   </form>
@@ -111,6 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     try {
         mysqli_query($conn, $sql);
         echo "appointment register successfully added to database.";
+    
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     } finally {
@@ -118,6 +121,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
+
+// if ($conn) {
+//   echo "Database connection established successfully!";
+// } else {
+//   echo "Failed to connect to the database.";
+// }
 ?>
 
 
@@ -132,19 +141,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     server called "action_page.php".</p> -->
    
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </html>
