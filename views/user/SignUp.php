@@ -1,5 +1,5 @@
 <?php
-  include_once "includes/DataBase.php";
+  include_once "../../config/dbh.inc.php";
 ?>
 
 
