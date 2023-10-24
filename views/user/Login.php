@@ -20,7 +20,7 @@
 
  <?php
    session_start();
-   include_once "includes/DataBase.php";
+   include_once "../../config/dbh.inc.php";
    //grab data from user and see if it exists in database
    if($_SERVER["REQUEST_METHOD"]=="POST"){
 
