@@ -3,7 +3,9 @@ body{
 }
 
 #Services{
-    
+    background-image: url('../../public/images/Ads.webp');
+    background-size: cover;
+    background-position: center center;
     background-color: #ff5454;
     border: none;
     color: white;
@@ -12,14 +14,15 @@ body{
     text-decoration: solid;
     display: inline-block;
     font-size: 28px;
-    background-image: "E:/dog/how-to-bathe-dog-1587137329.jpg";
   }
-  
-#Appoitments{
     
+#Appoitments{
+    background-image: url("../../public/images/CatAppointments.gif");
+    background-size: cover;
+    background-position: center center;
     background-color: #ff5454;
     border: none;
-    color: white;
+    color: black;
     padding: 50px 100px;
     text-align: center;
     text-decoration: solid;
@@ -29,7 +32,10 @@ body{
   }
 
 #Host{
-    background-color: #ff5454; 
+    background-image: url("../../public/images/Dog\ Receptionist.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-color: #ff5454;
     border: none;
     color: white;
     padding: 50px 100px;
@@ -41,13 +47,20 @@ body{
 
 
 #Vaccines{
+    background-image: url("../../public/images/Vaccinated\ Cat\ 2.jpg");
+    background-size: cover;
+    background-position: center center;
+    background-color: #ff5454;
     align-self: flex-end;
-    background-color: #ff5454; 
     border: none;
-    color: white;
+    color: black;
     padding: 50px 100px;
     text-align: center;
     text-decoration: solid;
     display: inline-block;
     font-size: 28px;
+}
+
+#image_row1{
+  
 }

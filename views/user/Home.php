@@ -7,7 +7,7 @@
 </head>
 
 <body>
-<h1>Zootopia! (hena el mafrood el nav bar)</h1>
+<?php include '../partials/menu.php';?>
 <hr>
 <?php
 session_start();
@@ -15,9 +15,9 @@ session_start();
 
 if(!empty($_SESSION['ID'])) {
 	echo "<h1>Welcome ".$_SESSION['FirstName']."</h1>";
-	//when mohammed does the profile viewer it will go here.
+	
 }
-//asdasdasdasdasdasd
+
 else{
 	echo "<h1>Welcome To Zootopia!</h1>";
 	
@@ -31,12 +31,24 @@ else{
 	
 }
 ?>
+<div id="image_row1">
 <br><br>
-<button id="Services">Services</button>
+<a href="Home.php"> <!-- Waiting for sondos to add the services page -->
+    <button id="Services">Services</button>
+</a>
+
 <br><br>
-<button id="Appoitments">Appoitments</button>
+<a href="appointment.php">
+<button id="Appoitments">Appointments</button>
+</a>
+</div>
+
+
 <br><br>
+<a href="hotelbook.php">
 <button id="Host">Pet Hosting</button>
+</a>
+
 <br><br>
 <button id="Vaccines" >Vaccines</button>
 
