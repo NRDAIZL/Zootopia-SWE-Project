@@ -1,7 +1,9 @@
 body{
-    background-color: rgb(185, 255, 152);
+
     background-image: url("https://wellbeingintl.org/wp-content/uploads/2022/08/1200x630-Happy-Dogs-by-HQuality-shutterstock_1400206646.jpg");
-    
+    background-repeat: no-repeat;
+    background-position: center 100;
+    background-size: cover;
 }
 #form{
     border: 6px solid black;
