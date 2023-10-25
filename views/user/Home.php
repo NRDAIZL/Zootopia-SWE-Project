@@ -7,14 +7,14 @@
 </head>
 
 <body>
-<h1>Zootopia! (hena el mafrood el nav bar)</h1>
+<?php include '../partials/menu.php'; ?>
 <hr>
 <?php
 session_start();
 //Checking if a user logged in or not.
 
 if(!empty($_SESSION['ID'])) {
-	echo "<h1>Welcome ".$_SESSION['FirstName']."</h1>";
+	echo "<h1>Welcome ".$_SESSION['FName']."</h1>";
 	//when mohammed does the profile viewer it will go here.
 }
 else{
