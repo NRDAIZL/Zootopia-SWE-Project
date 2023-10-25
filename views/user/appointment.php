@@ -3,20 +3,25 @@
 <head>
   <meta charset="UTF-8">
   <title>book an appointment</title>
-  <script src="javascript/appointment.js"></script>
+  <script src="../../public/javascript/appointment.js"></script>
   <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
-  
+  <?php
+  include_once "../../config/dbh.inc.php";
+?>
   
 </head>
 <body>
+  
 <?php include '../partials/menu.php';?>
     <!-- <p>The select element is used to create a drop-down list.</p> -->
     
     <!-- <form action="/action_page.php"> -->
 <!-- ///////////////////// -->
 <div class="container">
-<!-- action="apvalidate()" -->
-  <form onsubmit="return apvalidate()" >
+<!-- action="apvalidate()" 
+onsubmit="return apvalidate()"
+-->
+  <form  action="" method="post">
     
    
     <!-- <div class="row"> -->
@@ -55,7 +60,9 @@
     <!-- </div> -->
 
 
-<!-- //////////////////////// -->
+
+
+
 
       <br><br>
       <label for="apday" class="choose">Choose a day:</label>
@@ -80,13 +87,52 @@
         
       </select>
       <br><br>
-      <!-- <a href="confirmappt.html"> -->
+      <a href="./confirmappt.php">
         <!-- <input type="submit" class="apbtn" id="apbtn" value="submit the booking"> -->
-        <button class="apbtn" id="apbtn" type="submit"> Submit  </button>
-    <!-- </a> -->
+        <button class="apbtn" id="apbtn" type="submit"> Submit </button>
+    </a>
       
        
   </form>
+<!-- ////////////////////////// -->
+<?php
+// Grab data from user if form was submitted
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    // Get data from the form
+    $pettype1 = mysqli_real_escape_string($conn, $_POST['pettype']);
+    $petname1 = mysqli_real_escape_string($conn, $_POST['petname']);
+    $apday11 = mysqli_real_escape_string($conn, $_POST['apday']);
+    $aptime11 = mysqli_real_escape_string($conn, $_POST['aptime']);
+   
+
+    // Create an SQL query to insert the data
+    $sql = "INSERT INTO appointments (pettype	,petname	,appointmentday	,appointmenttime)
+            VALUES ('$pettype1', '$petname1', '$apday11', '$aptime11')";
+
+    // Perform the query
+    try {
+        mysqli_query($conn, $sql);
+        echo "appointment register successfully added to database.";
+    
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    } finally {
+        mysqli_close($conn);
+    }
+}
+
+
+// if ($conn) {
+//   echo "Database connection established successfully!";
+// } else {
+//   echo "Failed to connect to the database.";
+// }
+?>
+
+
+
+<!-- ////////////////////////// -->
+
 </div>
       <!-- <input type="submit" value="Submit"> -->
     <!-- </form> -->
@@ -95,19 +141,6 @@
     server called "action_page.php".</p> -->
    
 </body>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 </html>

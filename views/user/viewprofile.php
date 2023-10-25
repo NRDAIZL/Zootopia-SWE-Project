@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<link rel ="stylesheet" , href="profile.css"/>
+<link rel ="stylesheet" , href="../../public/css/profile.css"/>
 	<title>Profile</title>
     <style>
         
@@ -21,17 +21,31 @@
     font-family:Arial, Helvetica, sans-serif;
     
 }
-img {
+/* img {
     width :260px;
     border-radius: 50%;
 
     height: 250px;
  margin-left: 5px;
      border-radius: 20px;
-     display:table;
+     display:table; 
+clip-path: circle();
+
+ } */
+
+.zpimg {
+    width :260px;
+    border-radius: 50%;
+
+    height: 250px;
+ margin-left: 5px;
+     border-radius: 20px;
+     display:table; 
 clip-path: circle();
 
  }
+
+
  
 
 .im {
@@ -89,10 +103,12 @@ button {
    </style>
 </head>
 <body>
+<?php include '../partials/menu.php'; ?>
+
 <div class="pr">
         <div class="im">
             <div class="im1">
-        <img src="../../public/images/istockphoto-1300845620-612x612.jpg">
+        <img class="zpimg" src="../../public/images/istockphoto-1300845620-612x612.jpg">
         <ul>
         <li>Ahmed Mohamed</li>
         <button type="button">Back</button>

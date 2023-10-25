@@ -1,0 +1,53 @@
+body{
+    background-color: rgb(223, 221, 218);
+}
+
+#Services{
+    
+    background-color: #ff5454;
+    border: none;
+    color: white;
+    padding: 50px 100px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 28px;
+    background-image: "E:/dog/how-to-bathe-dog-1587137329.jpg";
+  }
+  
+#Appoitments{
+    
+    background-color: #ff5454;
+    border: none;
+    color: white;
+    padding: 50px 100px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 28px;
+    
+  }
+
+#Host{
+    background-color: #ff5454; 
+    border: none;
+    color: white;
+    padding: 50px 100px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 28px;
+}
+
+
+#Vaccines{
+    align-self: flex-end;
+    background-color: #ff5454; 
+    border: none;
+    color: white;
+    padding: 50px 100px;
+    text-align: center;
+    text-decoration: solid;
+    display: inline-block;
+    font-size: 28px;
+}
