@@ -14,7 +14,7 @@ session_start();
 //Checking if a user logged in or not.
 
 if(!empty($_SESSION['ID'])) {
-	echo "<h1>Welcome ".$_SESSION['FirstName']."</h1>";
+	echo "<h1>Welcome ".$_SESSION['FName']."</h1>";
 	
 }
 
@@ -41,7 +41,7 @@ else{
 <a href="appointment.php">
 <button id="Appoitments">Appointments</button>
 </a>
-</div>
+
 
 
 <br><br>
@@ -51,6 +51,6 @@ else{
 
 <br><br>
 <button id="Vaccines" >Vaccines</button>
-
+</div>
 
 </html>

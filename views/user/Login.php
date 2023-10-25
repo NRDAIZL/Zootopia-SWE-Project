@@ -35,7 +35,7 @@
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		
-		header("Location:../../user/Home.php?login=success");
+		header("Location:Home.php");
 	}
 	else	{
 		echo "Invalid Email or Password";

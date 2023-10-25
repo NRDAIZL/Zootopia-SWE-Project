@@ -62,5 +62,12 @@ body{
 }
 
 #image_row1{
-  
+    width: 20%;
+    height: 20%;
+    margin: 200px auto;
+    padding: 10px ;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
