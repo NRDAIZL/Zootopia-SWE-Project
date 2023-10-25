@@ -17,6 +17,7 @@ if(!empty($_SESSION['ID'])) {
 	echo "<h1>Welcome ".$_SESSION['FirstName']."</h1>";
 	//when mohammed does the profile viewer it will go here.
 }
+//asdasdasdasdasdasd
 else{
 	echo "<h1>Welcome To Zootopia!</h1>";
 	
