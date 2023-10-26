@@ -3,9 +3,12 @@
 <html>
    <head>
      <title></title>
+     <?php include '../partials/menu.php';?>
    </head>
 
    <body>
+   <?php include '../partials/menu.php'; ?>
+
       <h1>Login</h1>
       <form action="" method="post">
       <label>Email:</label><br>
@@ -35,7 +38,7 @@
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		
-		header("Location:../../user/Home.php?login=success");
+		header("Location:viewprofile.php");;
 	}
 	else	{
 		echo "Invalid Email or Password";
