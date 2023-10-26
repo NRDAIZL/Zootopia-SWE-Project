@@ -58,7 +58,7 @@
 
         }
         .box .img{
-          height: 250px;  
+
           width:250px;
         }
         .box.h3{
@@ -123,28 +123,28 @@
 <h1>Our Services.</h2>
    <div class="row">
       <div class="box">
-<img src="../../public/img/img.02.png">
-<h3>oppointment</h3>
-<p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
+<img src="../../public/images/img.02.png">
+<h3>appointment</h3>
+<p> appointment<br>Vets at our clinic do all they can do to help your pet<br>stop.</p>
 
 <button class="btn">make an oppointment</button>
 </div>
 <div class="box">
-<img src="../../public/img/img.04.png">
+<img src="../../public/images/img.04.jpg">
 <h3>grooming</h3>
 <p> We offer services to take good care of your pet<br>grooming is so imortant for every pet health<br>stop.</p>
 
 <button class="btn">make an oppointment</button>
 </div>
 <div class="box">
-<img src="../../public/img/img.03.jpg">
+<img src="../../public/images/img.03.jpg">
 <h3>pet hotel</h3>
 <p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
 
 <button class="btn">book now</button>
 </div>
 <div class="box">
-<img src="../../public/img/img.01.jpg">
+<img src="../../public/images/img.01.jpg">
 <h3>vaccine times</h3>
 <p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
 
