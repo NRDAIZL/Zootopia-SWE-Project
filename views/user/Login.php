@@ -3,7 +3,6 @@
 <html>
    <head>
      <title></title>
-     <?php include '../partials/menu.php';?>
    </head>
 
    <body>
@@ -17,6 +16,7 @@
       <input type="Password" name="Password"><br>
       <input type="submit" value="Submit" name="Submit">
       <input type="reset">
+      <p>First Time?</p><a class="ho" href="../../views/user/SignUp.php">Sign up</a>
 
 
 </form>
