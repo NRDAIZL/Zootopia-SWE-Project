@@ -48,7 +48,7 @@
 	
 
     //insert it to database 
-	$sql="INSERT INTO users(Fname,Lname,Email,Password) 
+	$sql="INSERT INTO users(FirstName,LastName,Email,Password) 
 	values('$Fname','$Lname','$Email','$Password')";
 	$result=mysqli_query($conn,$sql);
 
