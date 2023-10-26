@@ -112,28 +112,28 @@
 <h1>Our Services.</h2>
    <div class="row">
       <div class="box">
-<img src="img.02.png">
+<img src="../../public/images/img.02.png">
 <h3>appointment</h3>
 <p> appointment<br>Vets at our clinic do all they can do to help your pet<br></p>
 
 <button class="btn">make an oppointment</button>
 </div>
 <div class="box">
-<img src="img.04.jpg">
+<img src="../../public/images/img.04.jpg">
 <h3>grooming</h3>
 <p> We offer services to take good care of your pet<br>grooming is so imortant for every pet health<br></p>
 
 <button class="btn" onclick="toggleHoverr()">make an appointment</button>
 </div>
 <div class="box">
-<img src="img.03.jpg">
+<img src="../../public/images/img.03.jpg">
 <h3>pet hotel</h3>
 <p> pet hotel offers various services<br>for your pet's entertainment<br></p>
 
 <button class="btn">book now</button>
 </div>
 <div class="box">
-<img src="img.01.jpg">
+<img src="../../public/images/img.01.jpg">
 <h3>vaccine times</h3>
 <p> vaccination is so important <br>for your health before your pet's health<br></p>
 
