@@ -3,6 +3,7 @@
 ?>
 
 
+
 <!DOCTYPE html>
 <html>
 
@@ -110,8 +111,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $petGender = mysqli_real_escape_string($conn, $_POST['gender']);
 
     // Create an SQL query to insert the data
-    $sql = "INSERT INTO bookings (booking_type, check_in_date, check_out_date, animal_type, pet_gender)
-            VALUES ('$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender')";
+    $sql = "INSERT INTO bookings (booking_type, check_in_date, check_out_date, animal_type, pet_gender,Fname)
+            VALUES ('$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender','$_SESSION['FName']')";
 
     // Perform the query
     try {

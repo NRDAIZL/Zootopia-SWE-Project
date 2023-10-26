@@ -7,6 +7,8 @@
    </head>
 
    <body>
+   <?php include '../partials/menu.php'; ?>
+
       <h1>Login</h1>
       <form action="" method="post">
       <label>Email:</label><br>
