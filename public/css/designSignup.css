@@ -6,8 +6,8 @@ body {
 }
 
 #form {
-    border: 6px solid black;
-    background-color: rgb(170, 142, 215);
+    border: 3px solid black;
+    background-color: #be5e5e;
     width: 20%;
     height: 20%;
     margin: 200px auto;
