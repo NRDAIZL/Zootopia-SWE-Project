@@ -40,7 +40,7 @@ else{
 
 <div id="image_row1">
 <br><br>
-<a href="Home.php"> <!-- Waiting for sondos to add the services page -->
+<a href="services.php"> <!-- Waiting for sondos to add the services page -->
     <button id="Services">Services</button>
 </a>
 
@@ -57,7 +57,9 @@ else{
 </a>
 
 <br><br>
+<a href="vaccine.php">
 <button id="Vaccines" >Vaccines</button>
+</a>
 </div>
 
 </html>
