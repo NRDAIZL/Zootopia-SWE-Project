@@ -1,7 +1,9 @@
 <?php
 
 // Include header
-include('../partials/admin-header.php');
+include('../partials/admin-sidenav.php');
+
+// include('../partials/admin-header.php');
 
 ?>
 
