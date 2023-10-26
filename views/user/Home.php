@@ -8,13 +8,18 @@
 
 <body>
 <?php include '../partials/menu.php';?>
-<hr>
+
+
 <?php
 session_start();
 //Checking if a user logged in or not.
 
 if(!empty($_SESSION['ID'])) {
 	echo "<h1>Welcome ".$_SESSION['FName']."</h1>";
+    echo"<a href='Logout.php'>SignOut Here</a>";
+
+  
+
 	
 }
 
@@ -31,6 +36,8 @@ else{
 	
 }
 ?>
+
+
 <div id="image_row1">
 <br><br>
 <a href="Home.php"> <!-- Waiting for sondos to add the services page -->

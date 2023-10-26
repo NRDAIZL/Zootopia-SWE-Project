@@ -3,6 +3,7 @@
 <html>
    <head>
      <title></title>
+     <?php include '../partials/menu.php';?>
    </head>
 
    <body>
@@ -35,7 +36,7 @@
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		
-		header("Location:Home.php");
+		header("Location:Home.php");;
 	}
 	else	{
 		echo "Invalid Email or Password";
