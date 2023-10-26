@@ -87,10 +87,10 @@ onsubmit="return apvalidate()"
         
       </select>
       <br><br>
-      <a href="./confirmappt.php">
+      <!-- <a href="Home.php"> -->
         <!-- <input type="submit" class="apbtn" id="apbtn" value="submit the booking"> -->
         <button class="apbtn" id="apbtn" type="submit"> Submit </button>
-    </a>
+    <!-- </a> -->
       
        
   </form>
@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Perform the query
     try {
         mysqli_query($conn, $sql);
-        echo "appointment register successfully added to database.";
+        echo "appointment registered successfully :)";
     
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
@@ -121,12 +121,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-
-// if ($conn) {
-//   echo "Database connection established successfully!";
-// } else {
-//   echo "Failed to connect to the database.";
-// }
 ?>
 
 
@@ -134,11 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <!-- ////////////////////////// -->
 
 </div>
-      <!-- <input type="submit" value="Submit"> -->
-    <!-- </form> -->
-    
-    <!-- <p>Click the "Submit" button and the form-data will be sent to a page on the 
-    server called "action_page.php".</p> -->
+ 
    
 </body>
 

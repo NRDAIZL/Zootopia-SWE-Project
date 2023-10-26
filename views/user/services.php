@@ -5,7 +5,7 @@
         <meta http-equiv ="X-UA- compatible compatible" content ="IE=edge">
         <meta name ="viewport" content="width=device-width,initial-scale=1.0">
         <title>zootopia-services </title>
-
+        <script src ="../../public/javascript/script.js" ></script>
 <!--font type-->
 <!--<link rel ="stylesheet" herf="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
@@ -34,7 +34,7 @@
          font-weight: 400;
         }
         h1{
-          color:#2e937a;
+          color:#be5e5e;
           font-size: 45px;
           margin-top: 10px;
 
@@ -80,7 +80,7 @@
         .box .btn{
           width:150px;
           border:none;
-          color:#fff;
+          background-color:#be5e5e;
           font-size: 17px;
           cursor:pointer;
           font-weight: bold;
@@ -97,55 +97,45 @@
 
         }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+        .fet{
+          text-align: center;
+        }
 
 
 
    </style>
+    </head>
+    
     <body>
-    <h2>FEATURES</h2>
+    <?php include '../partials/menu.php';?>
+    <h2 class="fet">FEATURES</h2>
 <h1>Our Services.</h2>
    <div class="row">
       <div class="box">
-<img src="img.02.png">
-<h3>oppointment</h3>
-<p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
+<img src="../../public/images/img.02.png">
+<h3>appointment</h3>
+<p> appointment<br>Vets at our clinic do all they can do to help your pet<br></p>
 
 <button class="btn">make an oppointment</button>
 </div>
 <div class="box">
-<img src="img.04.jpg">
+<img src="../../public/images/img.04.jpg">
 <h3>grooming</h3>
-<p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
+<p> We offer services to take good care of your pet<br>grooming is so imortant for every pet health<br></p>
 
-<button class="btn">make an oppointment</button>
+<button class="btn" onclick="toggleHoverr()">make an appointment</button>
 </div>
 <div class="box">
-<img src="img.03.jpg">
+<img src="../../public/images/img.03.jpg">
 <h3>pet hotel</h3>
-<p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
+<p> pet hotel offers various services<br>for your pet's entertainment<br></p>
 
 <button class="btn">book now</button>
 </div>
 <div class="box">
-<img src="img.01.jpg">
+<img src="../../public/images/img.01.jpg">
 <h3>vaccine times</h3>
-<p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
+<p> vaccination is so important <br>for your health before your pet's health<br></p>
 
 <button class="btn">book now</button>
 </div>
@@ -155,6 +145,6 @@
 
 
 
-<script src ="js/script.js" ></script>
+
     </body>
 </html>

@@ -6,6 +6,8 @@
    </head>
 
    <body>
+   <?php include '../partials/menu.php'; ?>
+
       <h1>Login</h1>
       <form action="" method="post">
       <label>Email:</label><br>
@@ -14,6 +16,7 @@
       <input type="Password" name="Password"><br>
       <input type="submit" value="Submit" name="Submit">
       <input type="reset">
+      <p>First Time?</p><a class="ho" href="../../views/user/SignUp.php">Sign up</a>
 
 
 </form>
@@ -35,7 +38,7 @@
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		
-		header("Location:../../user/Home.php?login=success");
+		header("Location:viewprofile.php");;
 	}
 	else	{
 		echo "Invalid Email or Password";

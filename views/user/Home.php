@@ -7,17 +7,22 @@
 </head>
 
 <body>
-<?php include '../partials/menu.php'; ?>
-<hr>
+<?php include '../partials/menu.php';?>
+
+
 <?php
 session_start();
 //Checking if a user logged in or not.
 
 if(!empty($_SESSION['ID'])) {
 	echo "<h1>Welcome ".$_SESSION['FName']."</h1>";
-	//when mohammed does the profile viewer it will go here.
+    echo"<a href='Logout.php'>SignOut Here</a>";
+
+  
+
+	
 }
-//asdasdasdasdasdasd
+
 else{
 	echo "<h1>Welcome To Zootopia!</h1>";
 	
@@ -31,14 +36,30 @@ else{
 	
 }
 ?>
-<br><br>
-<button id="Services">Services</button>
-<br><br>
-<button id="Appoitments">Appoitments</button>
-<br><br>
-<button id="Host">Pet Hosting</button>
-<br><br>
-<button id="Vaccines" >Vaccines</button>
 
+
+<div id="image_row1">
+<br><br>
+<a href="services.php"> <!-- Waiting for sondos to add the services page -->
+    <button id="Services">Services</button>
+</a>
+
+<br><br>
+<a href="appointment.php">
+<button id="Appoitments">Appointments</button>
+</a>
+
+
+
+<br><br>
+<a href="hotelbook.php">
+<button id="Host">Pet Hosting</button>
+</a>
+
+<br><br>
+<a href="vaccine.php">
+<button id="Vaccines" >Vaccines</button>
+</a>
+</div>
 
 </html>

@@ -11,6 +11,7 @@
    </head>
 
    <body>
+   <?php include '../partials/menu.php'; ?>
 
    <div id="form">
     <h1 id="Title" style="font-family: Arial" >Sign Up</h1>
@@ -31,6 +32,8 @@
 
   <input style="font-family: Arial" type="submit" value="Submit" name="Submit">
   <input style="font-family: Arial" type="reset">
+  <p>Already have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
+
 </div>
 </form>
 </div>
@@ -45,7 +48,7 @@
 	
 
     //insert it to database 
-	$sql="insert into users(FirstName,LastName,Email,Password) 
+	$sql="INSERT INTO users(FirstName,LastName,Email,Password) 
 	values('$Fname','$Lname','$Email','$Password')";
 	$result=mysqli_query($conn,$sql);
 
