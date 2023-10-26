@@ -36,7 +36,7 @@
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		
-		header("Location:Home.php");;
+		header("Location:viewprofile.php");;
 	}
 	else	{
 		echo "Invalid Email or Password";
