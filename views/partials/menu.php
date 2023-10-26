@@ -16,10 +16,10 @@
     
         <ul id="myElement" onclick="toggleHover()">
 
-            <li><a class="ho" href="#">Home</a></li>
-            <li><a class="ho" href="../../views/user/SignUp.php">Registration</a></li>
+            <li><a class="ho" href="../../views/user/home.php">Home</a></li>
+            <li><a class="ho" href="../../views/user/signup.php">Registration</a></li>
             <li><a class="ho" href="../../views/user/appointment.php">Book an appointment</a></li>
-            <li><a class="ho" href="#">Services</a></li>
+            <li><a class="ho" href="../../views/user/services.php">Services</a></li>
             <li><a class="ho" href="../../views/user/viewprofile.php">Profile</a></li>
         </ul>
         <label id="icon">

@@ -118,6 +118,7 @@
 
    </style>
     <body>
+    <?php include '../partials/menu.php';?>
     <h2>FEATURES</h2>
 <h1>Our Services.</h2>
    <div class="row">
@@ -131,7 +132,7 @@
 <div class="box">
 <img src="../../public/img/img.04.png">
 <h3>grooming</h3>
-<p> lablablabaa<br>stop.labllalalalb<br>stop.</p>
+<p> We offer services to take good care of your pet<br>grooming is so imortant for every pet health<br>stop.</p>
 
 <button class="btn">make an oppointment</button>
 </div>
