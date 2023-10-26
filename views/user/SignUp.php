@@ -32,7 +32,7 @@
 
   <input style="font-family: Arial" type="submit" value="Submit" name="Submit">
   <input style="font-family: Arial" type="reset">
-  <p>Already have an account?</p><a class="ho" href="../../views/user/Signin.php">Sign in</a>
+  <p>Already have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
 
 </div>
 </form>
