@@ -43,7 +43,10 @@
 <body>
 <script src="../../public/javascript/calendar.js"></script>
 
-<?php include '../partials/menu.php'; ?>
+<?php include '../partials/menu.php';
+session_start();
+?>
+
     <div class="booking-form">
         <h1>Pet Hotel Booking Form</h1>
         <form onsubmit="return validateForm();" action="confirmhotel.php" method="post">
