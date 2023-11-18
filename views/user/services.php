@@ -123,7 +123,7 @@
 <h3>grooming</h3>
 <p> We offer services to take good care of your pet<br>grooming is so imortant for every pet health<br></p>
 
-<button class="btn" onclick="toggleHoverr()">make an appointment</button>
+<button class="btn" onclick="toggleHoverr() "hb" ">make an appointment</button>
 </div>
 <div class="box">
 <img src="../../public/images/img.03.jpg">
