@@ -1,8 +1,9 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
     
-    <title>Zootpia Home Page</title>
+    <title>Zootopia Home Page</title>
     <link rel= "stylesheet" href="../../public/css/designHome.css"/>
 </head>
 
@@ -11,11 +12,10 @@
 
 
 <?php
-session_start();
 //Checking if a user logged in or not.
 
 if(!empty($_SESSION['ID'])) {
-	echo "<h1>Welcome ".$_SESSION['FName']."</h1>";
+	echo "<h1>Welcome ".$_SESSION['Fname']."</h1>";
     echo"<a href='Logout.php'>SignOut Here</a>";
 
   
@@ -24,6 +24,8 @@ if(!empty($_SESSION['ID'])) {
 }
 
 else{
+    var_dump($_SESSION);
+
 	echo "<h1>Welcome To Zootopia!</h1>";
 	
     
