@@ -1,17 +1,13 @@
+<style>
+	a{
+		color: #1f1f1f;
+		text-decoration: none;
+    background-color: none;
+	}
+</style>
+<link rel="stylesheet"
+		href="../../public/css/admin-main.css">
 
-<nav class="sidebar">
-  <ul>
-    <li><a href="admin.php?page=dashboard"> Dashboard</a></li>
-    <li><a href="admin.php?page=schedule"> Availability</a></li>
-
-    <li><a href="admin.php?page=clients">Clients</a></li>
-    <li><a href="admin.php?page=pets"> Pets</a></li>
-    <li><a href="admin.php?page=Appointments">Appointments</a></li>
-    <li><a href="admin.php?page=hotel"> Hotel</a></li>
-    <li><a href="admin.php?page=Settings"> Settings</a></li>
-    <li><a href="logout.php"> Logout</a></li>
-  </ul>
-</nav>
 <nav class="nav">
 				<div class="nav-upper-options">
 					<div class="nav-option option1">
@@ -19,37 +15,37 @@
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
 							class="nav-img"
 							alt="dashboard"> -->
-              <a href="admin.php?page=dashboard"><div class="link"> Dashboard</div></a>
+              <a href="../admin/dashboard.php">Dashboard</a>
 					</div>
 
 					<div class="option2 nav-option">
 						
-						<h3> Articles</h3>
+					<a href="../admin/availability.php"> Availability</a>
 					</div>
 
 					<div class="nav-option option3">
 					
-						<h3> Report</h3>
+					<a href="../admin/clients.php">Clients</a>
 					</div>
 
 					<div class="nav-option option4">
 					
-						<h3> Institution</h3>
+					<a href="../admin/pets.php"> Pets</a>
 					</div>
 
 					<div class="nav-option option5">
 						
-						<h3> Profile</h3>
+					<a href="../admin/appointments.php">Appointments</a>
 					</div>
 
 					<div class="nav-option option6">
 						
-						<h3> Settings</h3>
+					<a href="../admin/pethotel.php"> Hotel</a>
 					</div>
 
 					<div class="nav-option logout">
 						
-						<h3>Logout</h3>
+					<a href="../user/Logout.php"> Logout</a>
 					</div>
 
 				</div>

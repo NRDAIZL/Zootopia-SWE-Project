@@ -21,87 +21,14 @@
 
 	<!-- for header part -->
 	<header>
-
-		<div class="logosec">
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182541/Untitled-design-(30).png"
-				class="icn menuicn"
-				id="menuicn"
-				alt="menu-icon">
-		</div>
-
-		<div class="searchbar">
-			<input type="text"
-				placeholder="Search">
-			<div class="searchbtn">
-			<img src="../../public/images/searchicon.png"
-
-
-					class="icn srchicn"
-					alt="search-icon">
-			</div>
-		</div>
-
-		<!-- <div class="message">
-			<div class="circle"></div>
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210183322/8.png"
-				class="icn"
-				alt="">
-			<div class="dp">
-			<img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210180014/profile-removebg-preview.png"
-					class="dpicn"
-					alt="dp">
-			</div>
-		</div> -->
+	<?php include '../partials/admin-header.php';?>
 
 	</header>
 
 	<div class="main-container">
 		<div class="navcontainer">
-			<nav class="nav">
-				<div class="nav-upper-options">
-					<div class="nav-option option1">
-						<!-- <img src=
-"https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
-							class="nav-img"
-							alt="dashboard"> -->
-						<h3> Dashboard</h3>
-					</div>
+		<?php include '../partials/admin-sidenav.php';?>
 
-					<div class="option2 nav-option">
-						
-						<h3> Articles</h3>
-					</div>
-
-					<div class="nav-option option3">
-					
-						<h3> Report</h3>
-					</div>
-
-					<div class="nav-option option4">
-					
-						<h3> Institution</h3>
-					</div>
-
-					<div class="nav-option option5">
-						
-						<h3> Profile</h3>
-					</div>
-
-					<div class="nav-option option6">
-						
-						<h3> Settings</h3>
-					</div>
-
-					<div class="nav-option logout">
-						
-						<h3>Logout</h3>
-					</div>
-
-				</div>
-			</nav>
 		</div>
 		<div class="main">
 

@@ -362,9 +362,3 @@ header {
     filter: invert(1);
     -webkit-filter: invert(1);
 }
-
-.link {
-    color: aqua;
-    text-decoration: none;
-    background-color: none;
-}
