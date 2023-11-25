@@ -31,7 +31,7 @@
 		<div class="navcontainer">
         <?php include '../partials/admin-sidenav.php';?>
 
-		</div>s
+		</div>
 		<div class="main">
 
 			<div class="searchbar2">
