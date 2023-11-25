@@ -99,8 +99,8 @@ button {
 </style>
 </head>
 <body>
-    <div class="b1" >
-        <form method="post">
+    <form method="post">
+          
     <?php
 //session_start(); 
   $host ="localhost";
@@ -152,6 +152,7 @@ if (isset($_POST['cancel'])){
 
 }
 ?>
+    <div class="b1" >
         <br><br>
 <h1>Edit Profile</h1>
     </div>
