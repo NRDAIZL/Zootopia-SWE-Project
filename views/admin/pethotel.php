@@ -45,7 +45,23 @@
 						alt="search-button">
 				</div>
 			</div>
-			
+			<div class="box-container">
+			<div class="box box1">
+					<div class="text">
+					<h5 class="topic-heading">Tuesday 12 september 2023</h5>
+						<h5 class="topic-heading">Pet bookings</h5>
+						<h2 class="topic">12</h2>
+					</div>
+				</div>
+				<div class="box box2">
+					<div class="text">
+						<h5 class="topic-heading">Hotel Capacity</h5>
+						<h5 class="topic">50</h5>
+					</div>
+
+					
+				</div>
+			</div>
 
 
 
