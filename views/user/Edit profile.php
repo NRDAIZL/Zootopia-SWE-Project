@@ -163,11 +163,13 @@ if (isset($_POST['cancel'])){
             <legend>User Info</legend>
             <div class="b3">
             <label>First Name:</label>
+                   <samp><?php if(!empty($FnError)){echo $FnError; }?></samp>
         <input type="text" required value="Ahmed" name="FirstName" >
             </div>
             <br>
             <div class="b4">
             <label>Last Name:</label>
+                    <samp><?php if(!empty($LnError)){echo $LnError; }?></samp>
         <input type="text" required value="Mohamed" name="LastName">
             </div>
             <br>
