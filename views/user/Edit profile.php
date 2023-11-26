@@ -183,8 +183,8 @@ if (isset($_POST['cancel'])){
             <label>Password:</label>
         <input type="password" required value="Ahgeuie54#" name="password" disabled>
             </div>
-            <button type="button" id="qaz">Cancel</button>
-    <button type="button" id="qwe">Save</button>
+            <button type="submit" id="qaz" name="cancel">Cancel</button>
+    <button type="submit" id="qwe" name="update">Update</button>
               </fieldset>
             
     </div>
