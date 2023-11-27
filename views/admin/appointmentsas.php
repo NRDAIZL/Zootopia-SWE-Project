@@ -3,8 +3,18 @@
 
 <head>
 	<meta charset="UTF-8">
-	
-	<link rel="stylesheet" href="../../public/css/appointmentas.css">
+	<meta http-equiv="X-UA-Compatible"
+		content="IE=edge">
+	<meta name="viewport"
+		content="width=device-width, 
+				initial-scale=1.0">
+	<title>ZOOTOPIA</title> 
+	<link rel="stylesheet"
+		href="../../public/css/admin-main.css">
+	<link rel="stylesheet"
+		href="../../public/css/admin-res.css">
+        <link rel="stylesheet"
+		href="../../public/css/appointmentas.css">
    
         <script src="../../public/javascript/appointmentas.js"></script>
 
@@ -19,27 +29,52 @@
 	<!-- for header part -->
 	<header>
 
-	<?php include './templatefornewpage.php';?>
+	<?php include '../partials/admin-header.php';?>
 
 
 	</header>
-	
 
-<?php 
+	<div class="main-container">
+		<div class="navcontainer">
+        <?php include '../partials/admin-sidenav.php';?>
+
+		</div>
+		<div class="main">
+
+			<div class="searchbar2">
+				<input type="text"
+					name=""
+					id=""
+					placeholder="Search">
+				<div class="searchbtn">
+				<img src="../../public/images/searchicon.png"
+						class="icn srchicn"
+						alt="search-button">
+				</div>
+			</div>
+			
+
+			<?php 
+
+
+
 
 $sql = "SELECT * FROM appointments";
 
+$result = $conn->query($sql);
 
 echo '<table border="0" cellspacing="2" cellpadding="2"> 
       <tr> 
-          <td> <font face="Arial">pettype</font> </td> 
-          <td> <font face="Arial">petname</font> </td> 
-          <td> <font face="Arial">appointmentday</font> </td> 
-          <td> <font face="Arial">appointmenttime</font> </td> 
+          <td> <font face="Arial">Pet type</font> </td> 
+          <td> <font face="Arial">Pet name</font> </td> 
+          <td> <font face="Arial">Appointment day</font> </td> 
+          <td> <font face="Arial">Appointment time</font> </td> 
       
       </tr>';
 
-if ($result = $mysqli->query($sql)) {
+
+	  
+//if ($result = $mysqli->query($sql)) {
 
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
@@ -61,20 +96,20 @@ if ($result = $mysqli->query($sql)) {
 
     /* free result set */
     $result->free();
+//}
+
+
+
+  // Perform the query
+  try {
+	mysqli_query($conn, $sql);
+	echo "appointment registered successfully :)";
+
+} catch (Exception $e) {
+	echo "Error: " . $e->getMessage();
+} finally {
+	mysqli_close($conn);
 }
-
-
-
-//   // Perform the query
-//   try {
-// 	mysqli_query($conn, $sql);
-// 	echo "appointment registered successfully :)";
-
-// } catch (Exception $e) {
-// 	echo "Error: " . $e->getMessage();
-// } finally {
-// 	mysqli_close($conn);
-// }
 
 
 
@@ -86,6 +121,13 @@ if ($result = $mysqli->query($sql)) {
 
 ?>
 
+
+
+
+		</div>
+	</div>
+
+	<script src="./index.js"></script>
 
 
 
