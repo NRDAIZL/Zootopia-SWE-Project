@@ -65,10 +65,10 @@ $result = $conn->query($sql);
 
 echo '<table border="0" cellspacing="2" cellpadding="2"> 
       <tr> 
-          <td> <font face="Arial">Pet type</font> </td> 
-          <td> <font face="Arial">Pet name</font> </td> 
-          <td> <font face="Arial">Appointment day</font> </td> 
-          <td> <font face="Arial">Appointment time</font> </td> 
+          <td> <font face="Arial">Pet type  </font> </td> 
+          <td> <font face="Arial">Pet name  </font> </td> 
+          <td> <font face="Arial">Appointment day  </font> </td> 
+          <td> <font face="Arial">Appointment time  </font> </td> 
       
       </tr>';
 
@@ -100,10 +100,10 @@ echo '<table border="0" cellspacing="2" cellpadding="2">
 
 
 
-  // Perform the query
+//   // Perform the query
   try {
 	mysqli_query($conn, $sql);
-	echo "appointment registered successfully :)";
+	
 
 } catch (Exception $e) {
 	echo "Error: " . $e->getMessage();
