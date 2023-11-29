@@ -52,10 +52,10 @@
    
 
 
-      <label for="avday" class="choose">Choose a day:</label>
+      <label for="days" class="choose">Choose a day:</label>
 
 <br>
-	  <input type="checkbox" id="sun" name="sun" value="sun">
+	  <!-- <input type="checkbox" id="sun" name="sun" value="sun">
 <label for="sun"> Sunday </label><br>
 <input type="checkbox" id="mon" name="mon" value="mon">
 <label for="mon">Monday</label><br>
@@ -68,15 +68,33 @@
 <input type="checkbox" id="fri" name="fri" value="fri">
 <label for="fri">Friday</label><br>
 <input type="checkbox" id="satur" name="satur" value="satur">
-<label for="satur">Saturday</label><br> 
+<label for="satur">Saturday</label><br>  -->
+
+
+<input type="checkbox" id="sun" name="days[]" value="sun">
+    <label for="sun"> Sunday </label><br>
+    <input type="checkbox" id="mon" name="days[]" value="mon">
+    <label for="mon">Monday</label><br>
+    <input type="checkbox" id="tues" name="days[]" value="tues">
+    <label for="tues">Tuesday</label><br>
+    <input type="checkbox" id="wends" name="days[]" value="wends">
+    <label for="wends">Wednesday</label><br>
+    <input type="checkbox" id="thurs" name="days[]" value="thurs">
+    <label for="thurs">Thursday</label><br>
+    <input type="checkbox" id="fri" name="days[]" value="fri">
+    <label for="fri">Friday</label><br>
+    <input type="checkbox" id="satur" name="days[]" value="satur">
+    <label for="satur">Saturday</label><br>
+
+
       
       <br><br>
 
-	  <label for="start_time">Start Time:</label>
-   <input type="text" name="start_time" required>
+	  <label for="starttime">Start Time:</label>
+   <input type="text" name="starttime" required>
 
-   <label for="end_time">End Time:</label>
-   <input type="text" name="end_time" required>
+   <label for="endtime">End Time:</label>
+   <input type="text" name="endtime" required>
 
 <!-- 
       <label for="aptime" class="choose">Choose time:</label>
@@ -101,12 +119,52 @@
    // Check if form is submitted
    if ($_SERVER["REQUEST_METHOD"] == "POST") {
    
-      $avday = $_POST["days"];
-      $startTime = $_POST["time"];
-      $endTime = $_POST["availability"];
+    //   $avday = $_POST["days"];
+	//$avday = implode(",", $_POST["days"]); // Convert array to comma-separated string
+   
+	//$avday = isset($_POST["days"]) ? implode(",", $_POST["days"]) : "error";
+      
+	// Check if the "days" array is set and not empty
+	//   $selectedDays = isset($_POST["days"]) ? $_POST["days"] : [];
+    
+	//   var_dump($selectedDays);
+
+
+
+	//   // Convert the selected days to a comma-separated string
+	//   $avday = implode(",", $selectedDays);
+
+
+////////////////////
+	$checked_arr = array();
+
+	// Fetch checked values
+	$fetchTime = mysqli_query($conn, "SELECT * FROM availabletime");
+	if(mysqli_num_rows($fetchTime) > 0){
+		  $result = mysqli_fetch_assoc($fetchTime);
+		  $checked_arr = explode(",", $result['days']);
+	}
+
+	// Create checkboxes
+	$days_arr = array("sun", "mon", "tues", "wends", "thurs", "fri", "satur");
+	foreach($days_arr as $day){
+
+		 $checked = "";
+		 if(in_array($day, $checked_arr)){
+			  $checked = "checked";
+		 }
+		 echo '<input type="checkbox" name="days[]" value="'.$day.'" '.$checked.' > '.ucfirst($day).' <br/>';
+	}
+
+
+	///////////////////////////////
+
+      $startTime = $_POST["starttime"];
+      $endTime = $_POST["endtime"];
 
       // Insert working hours into the database
-      $sql = "INSERT INTO availabletime (days, time, availability) VALUES ('$avday', '$startTime', '$endTime')";
+
+      $sql = "INSERT INTO availabletime (days, starttime, endtime) VALUES ('$avday', '$startTime', '$endTime')";
       if ($conn->query($sql) === TRUE) {
          echo "Working hours set successfully!";
       } else {
