@@ -55,21 +55,7 @@
       <label for="days" class="choose">Choose a day:</label>
 
 <br>
-	  <!-- <input type="checkbox" id="sun" name="sun" value="sun">
-<label for="sun"> Sunday </label><br>
-<input type="checkbox" id="mon" name="mon" value="mon">
-<label for="mon">Monday</label><br>
-<input type="checkbox" id="tues" name="tues" value="tues">
-<label for="vehicle3">Tuesday</label><br>
-<input type="checkbox" id="wends" name="wends" value="wends">
-<label for="wends"> wendsday </label><br>
-<input type="checkbox" id="thurs" name="thurs" value="thurs">
-<label for="thurs">thursday</label><br>
-<input type="checkbox" id="fri" name="fri" value="fri">
-<label for="fri">Friday</label><br>
-<input type="checkbox" id="satur" name="satur" value="satur">
-<label for="satur">Saturday</label><br>  -->
-
+	  
 
 <input type="checkbox" id="sun" name="days[]" value="sun">
     <label for="sun"> Sunday </label><br>
@@ -96,141 +82,55 @@
    <label for="endtime">End Time:</label>
    <input type="text" name="endtime" required>
 
-<!-- 
-      <label for="aptime" class="choose">Choose time:</label>
-      <select class="selectt" name="aptime" id="aptime" required>
-        <option class="optionn" value="0">select time</option>
+
+        <input type="submit" name="submit" class="apbtn" id="apbtn" value="submit">
         
-      </select>
-      <br><br> -->
-      <!-- <a href="Home.php"> -->
-        <input type="submit" class="apbtn" id="apbtn" value="submit">
-        <!-- <button class="apbtn" id="apbtn" type="submit"> Submit </button> -->
-    <!-- </a> -->
       
     
   </form>
 
-<!-- ////////////////////// -->
+<!-- //////////////////////////////// -->
 <?php
-//    // Include database connection
-//    include_once "../../config/dbh.inc.php";
-
-//    // Check if form is submitted
-//    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-   
-//     //   $avday = $_POST["days"];
-// 	//$avday = implode(",", $_POST["days"]); // Convert array to comma-separated string
-   
-// 	//$avday = isset($_POST["days"]) ? implode(",", $_POST["days"]) : "error";
-      
-// 	// Check if the "days" array is set and not empty
-// 	//   $selectedDays = isset($_POST["days"]) ? $_POST["days"] : [];
-    
-// 	//   var_dump($selectedDays);
-
-
-
-// 	//   // Convert the selected days to a comma-separated string
-// 	//   $avday = implode(",", $selectedDays);
-
-
-// ////////////////////
-// 	$checked_arr = array();
-
-// 	// Fetch checked values
-// 	$fetchTime = mysqli_query($conn, "SELECT * FROM availabletime");
-// 	if(mysqli_num_rows($fetchTime) > 0){
-// 		  $result = mysqli_fetch_assoc($fetchTime);
-// 		  $checked_arr = explode(",", $result['days']);
-// 	}
-
-// 	// Create checkboxes
-// 	$days_arr = array("sun", "mon", "tues", "wends", "thurs", "fri", "satur");
-// 	foreach($days_arr as $day){
-
-// 		 $checked = "";
-// 		 if(in_array($day, $checked_arr)){
-// 			  $checked = "checked";
-// 		 }
-// 		 echo '<input type="checkbox" name="days[]" value="'.$day.'" '.$checked.' > '.ucfirst($day).' <br/>';
-// 	}
-
-
-// 	///////////////////////////////
-
-//       $startTime = $_POST["starttime"];
-//       $endTime = $_POST["endtime"];
-
-//       // Insert working hours into the database
-
-//       $sql = "INSERT INTO availabletime (days, starttime, endtime) VALUES ('$avday', '$startTime', '$endTime')";
-//       if ($conn->query($sql) === TRUE) {
-//          echo "Working hours set successfully!";
-//       } else {
-//          echo "Error: " . $sql . "<br>" . $conn->error;
-//       }
-
-//       // Close connection
-//       $conn->close();
-//    }
-////////////////////////////////////////////////////////////////
 
 // Include database connection
 include_once "../../config/dbh.inc.php";
 
-// Check if form is submitted
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if (isset($_POST['submit'])){
+     $startTime = $_POST["starttime"];
+   $endTime = $_POST["endtime"];
 
-    // Check if the "days" array is set and not empty
-    $selectedDays = isset($_POST["days"]) ? $_POST["days"] : [];
+    if(!empty($_POST['days'])){
+        foreach($_POST['days']as $selectedd){
+           
+            if ($selectedd=="sun"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Sunday', '$startTime', '$endTime')");
+echo $selectedd;
+            }
+             if ($selectedd=="mon"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
+//echo $selectedd;
+            }
+             if ($selectedd=="tues"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
+//echo '$selectedd';
+            }
+             if ($selectedd=="wends"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
 
-    // Fetch existing days from the database
-    $fetchTime = mysqli_query($conn, "SELECT * FROM availabletime");
-    $existingDays = [];
-    if (mysqli_num_rows($fetchTime) > 0) {
-        $result = mysqli_fetch_assoc($fetchTime);
-        $existingDays = explode(",", $result['days']);
+            }
+             if ($selectedd=="thurs"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Thursday', '$startTime', '$endTime')");
+
+            }
+             if ($selectedd=="fri"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Friday', '$startTime', '$endTime')");
+
+            } if ($selectedd=="satur"){
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Saturday', '$startTime', '$endTime')");
+
+            }
+        }
     }
-
-    // Compare and update the selected days
-    $checked_arr = [];
-    foreach ($existingDays as $day) {
-        $checked_arr[$day] = in_array($day, $selectedDays);
-    }
-
-    // Create checkboxes
-    $days_arr = array("sun", "mon", "tues", "wends", "thurs", "fri", "satur");
-
-    // foreach ($days_arr as $day) {
-    //     $checked = $checked_arr[$day] ? "checked" : "";
-    //     echo '<input type="checkbox" name="days[]" value="' . $day . '" ' . $checked . ' > ' . ucfirst($day) . ' <br/>';
-    // }
-	// foreach ($days_arr as $day) {
-	// 	$checked = isset($checked_arr[$day]) && $checked_arr[$day] ? "checked" : "";
-	// 	echo '<input type="checkbox" name="days[]" value="' . $day . '" ' . $checked . ' > ' . ucfirst($day) . ' <br/>';
-	// }
-	foreach ($days_arr as $day) {
-		$checked = in_array($day, $selectedDays) ? "checked" : "";
-		//echo '<input type="checkbox" name="days[]" value="' . $day . '" ' . $checked . ' > ' . ucfirst($day) . ' <br/>';
-	}
-
-
-    $avday = implode(",", $selectedDays);
-
-    $startTime = $_POST["starttime"];
-    $endTime = $_POST["endtime"];
-
-    // Insert or update working hours into the database
-    if (empty($existingDays)) {
-        mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('$avday', '$startTime', '$endTime')");
-    } else {
-        mysqli_query($conn, "UPDATE availabletime SET days='$avday', starttime='$startTime', endtime='$endTime'");
-    }
-
-    echo "Working hours set successfully!";
-
-    // Close connection
     $conn->close();
 }
 
