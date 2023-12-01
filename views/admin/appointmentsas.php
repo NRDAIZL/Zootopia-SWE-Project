@@ -17,12 +17,20 @@
 		href="../../public/css/appointmentas.css">
    
         <script src="../../public/javascript/appointmentas.js"></script>
+		<link rel="stylesheet"
+		href="../../public/css/pethotelas.css">
+
 
 		<?php
   include_once "../../config/dbh.inc.php";
 ?>
 
 </head>
+<?php
+$sql = "SELECT * FROM appointments";
+
+$result = $conn->query($sql);
+?>
 
 <body>
 
@@ -54,21 +62,26 @@
 			</div>
 			
 
-			<?php 
+			
 
 
+			<div class="report-container">
+			<div class="report-header">
+					<h1 class="recent-Articles">Appointments</h1>
+					<button class="view">View All</button>
+				</div>
+				<div class="report-body">
+				<div class="items">
 
+<?php 
 
-$sql = "SELECT * FROM appointments";
-
-$result = $conn->query($sql);
 
 echo '<table border="0" cellspacing="2" cellpadding="2"> 
       <tr> 
-          <td> <font face="Arial">Pet type  </font> </td> 
-          <td> <font face="Arial">Pet name  </font> </td> 
-          <td> <font face="Arial">Appointment day  </font> </td> 
-          <td> <font face="Arial">Appointment time  </font> </td> 
+          <th> <font face="Arial">Pet type  </font> </th> 
+          <th> <font face="Arial">Pet name  </font> </th> 
+          <th> <font face="Arial">Appointment day  </font> </th> 
+          <th> <font face="Arial">Appointment time  </font> </th> 
       
       </tr>';
 
@@ -110,17 +123,9 @@ echo '<table border="0" cellspacing="2" cellpadding="2">
 } finally {
 	mysqli_close($conn);
 }
-
-
-
-
-
-
-
-
-
 ?>
-
+				</div>
+				</div>
 
 
 
