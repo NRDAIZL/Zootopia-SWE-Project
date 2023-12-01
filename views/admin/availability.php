@@ -104,15 +104,15 @@ if (isset($_POST['submit'])){
            
             if ($selectedd=="sun"){
                  mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Sunday', '$startTime', '$endTime')");
-echo $selectedd;
+//echo $selectedd;
             }
              if ($selectedd=="mon"){
                  mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
-//echo $selectedd;
+
             }
              if ($selectedd=="tues"){
                  mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
-//echo '$selectedd';
+
             }
              if ($selectedd=="wends"){
                  mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
