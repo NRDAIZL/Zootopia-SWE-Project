@@ -16,6 +16,8 @@
 		href="../../public/css/admin-main.css">
 	<link rel="stylesheet"
 		href="../../public/css/admin-res.css">
+		<link rel="stylesheet"
+		href="../../public/css/pethotelas.css">
         <script src="../../public/javascript/admin.js"></script>
 
 </head>
@@ -81,45 +83,41 @@ $result = $conn->query($sql);
 				</div>
 
 				<div class="report-body">
-					<div class="report-topic-heading">
-					<table class="report-table">
-        <tr>
-          <th class="t-op">Owner Name</th>
-          <th class="t-op">Pet Name</th>
-          <th class="t-op">Pet type</th>
-          <th class="t-op">Pet Breed</th>
-          <th class="t-op">Date from</th>
-          <th class="t-op">To</th>
-          <th class="t-op">price</th>
-        </tr>
-      </table>
-
-					</div>
-
+				
     <div class="items">
-    <?php 
-    if ($result->num_rows > 0) {
-        // output data of each row
-        while ($row = $result->fetch_assoc()) {
-            echo "<div class='item1'>";
-			echo"<tr>";
-            echo "<td>" . $row["Fname"] . "</td>";
-            echo "<td> " . $row["pet_name"] . "</td>";
-            echo "<td> " . $row["pet_type"] . "</td>";
-            echo "<td>" . $row["pet_breed"] . "</td>";
-            echo "<td> " . $row["check_in_date"] . "</td>";
-            echo "<td> " . $row["check_out_date"] . "</td>";
-            echo "<td> " . $row["price"] . "</td>";
-			echo"</tr>";
+	<?php 
+if ($result->num_rows > 0) {
+  echo "<table>";
+  echo "<tr>";
+  echo "<th>Owner Name</th>";
+  echo "<th>Pet Name</th>";
+  echo "<th>Pet type</th>";
+  echo "<th>Pet Breed</th>";
+  echo "<th>Date from</th>";
+  echo "<th>To</th>";
+  echo "<th>Price</th>";
+  echo "</tr>";
 
-            echo "</div>";
-        }
-    } else {
-        echo "<p>No results found.</p>";
-    }
-	// Close the connection
+  // output data of each row
+  while ($row = $result->fetch_assoc()) {
+    echo "<tr>";
+    echo "<td>" . $row["Fname"] . "</td>";
+    echo "<td>" . $row["pet_name"] . "</td>";
+    echo "<td>" . $row["pet_type"] . "</td>";
+    echo "<td>" . $row["pet_breed"] . "</td>";
+    echo "<td>" . $row["check_in_date"] . "</td>";
+    echo "<td>" . $row["check_out_date"] . "</td>";
+    echo "<td>" . $row["price"] . "</td>";
+    echo "</tr>";
+  }
+  echo "</table>";
+} else {
+  echo "<p>No results found.</p>";
+}
+// Close the connection
 $conn->close();
-    ?>
+?>
+
 
 
 
