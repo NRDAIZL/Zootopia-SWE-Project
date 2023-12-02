@@ -35,7 +35,7 @@
 
 					<div class="nav-option option5">
 						
-					<a href="../admin/appointments.php">Appointments</a>
+					<a href="../admin/appointmentsas.php">Appointments</a>
 					</div>
 
 					<div class="nav-option option6">

@@ -48,6 +48,7 @@ session_start();
 ?>
 
     <div class="booking-form">
+        <a href="addpet.php">Add new pet</a>
         <h1>Pet Hotel Booking Form</h1>
         <form onsubmit="return validateForm();" action="confirmhotel.php" method="post">
 
