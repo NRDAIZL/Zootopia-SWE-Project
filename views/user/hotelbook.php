@@ -38,6 +38,23 @@
             font-weight: bold;
         }
     </style>
+    <script>
+       $(document).ready(function () {
+    function loadPetNames() {
+        // Make an AJAX request to fetch pet names based on the owner ID
+        $.ajax({
+            type: "GET",
+            url: "get_pet_names.php", // Create a new PHP file to handle this AJAX request
+            success: function (data) {
+                $("#petName").html(data);
+            }
+        });
+    }
+
+    loadPetNames(); // Load initial pet names on page load
+});
+
+    </script>
 </head>
 
 <body>
@@ -48,7 +65,7 @@ session_start();
 ?>
 
     <div class="booking-form">
-        <a href="addpet.php">Add new pet</a>
+        <a href="addpet.php">Can't find your pet?Add new pet</a>
         <h1>Pet Hotel Booking Form</h1>
         <form onsubmit="return validateForm();" action="confirmhotel.php" method="post">
 
@@ -69,22 +86,13 @@ session_start();
          <label for="number-of-nights-display"> Number of nights:</label>
 
         <div id="number-of-nights-display"></div>
-        <label for="animal-type">Animal Type:</label>
-<select id="animal-type" name="animal-type">
-    <option value="dog">Dog</option>
-    <option value="cat">Cat</option>
-    <option value="rabbit">Rabbit</option>
-    <option value="bird">Bird</option>
-    <option value="reptile">Reptile</option>
-    <option value="other">Other</option>
+        <label for="petName">Pet Name:</label>
+<select id="petName" name="petName" required>
+   <!-- Options will be dynamically loaded here -->
 </select>
+
 <br>
-        <label>
-        <input type="radio" name="gender" value="male"> Male
-    </label>
-    <label>
-        <input type="radio" name="gender" value="female"> Female
-    </label>
+       
 
         <button type="submit" value="Submit" name="Submit">Book Now</button>
         </form>

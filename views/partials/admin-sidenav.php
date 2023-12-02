@@ -28,9 +28,9 @@
 					<a href="../admin/clients.php">Clients</a>
 					</div>
 
-					<div class="nav-option option4">
+					<div class="nav-option option4">	
 					
-					<a href="../admin/pets.php"> Pets</a>
+					<a href="../admin/allpets.php"> Pets</a>
 					</div>
 
 					<div class="nav-option option5">

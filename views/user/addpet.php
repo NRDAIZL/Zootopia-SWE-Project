@@ -1,3 +1,7 @@
+<?php
+  include_once "../../config/dbh.inc.php";
+  session_start();
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -43,10 +47,38 @@
       background-color: #dc2827;
     }
   </style>
+   <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            // Function to load pet breeds based on selected pet type
+            function loadBreeds() {
+                var petType = $("#petType").val();
+
+                // Make an AJAX request to fetch breeds based on the selected type
+                $.ajax({
+                    type: "GET",
+                    url: "get_breeds.php", // Create a separate PHP file to handle this AJAX request
+                    data: { petType: petType },
+                    success: function (data) {
+                        // Update the breed dropdown with fetched data
+                        $("#petBreed").html(data);
+                    }
+                });
+            }
+
+            // Attach the loadBreeds function to the change event of petType dropdown
+            $("#petType").change(function () {
+                loadBreeds();
+            });
+
+            // Load initial breeds on page load
+            loadBreeds();
+        });
+    </script>
 </head>
 <body>
   <h1>Add New Pet</h1>
-  <form action="add_pet.php" method="post" enctype="multipart/form-data">
+  <form action="" method="post" enctype="multipart/form-data">
     <label for="petName">Pet Name:</label>
     <input type="text" id="petName" name="petName" required>
 
@@ -63,7 +95,7 @@
     </select>
 
     <label for="petBreed">Pet Breed:</label>
-    <input type="text" id="petBreed" name="petBreed" required>
+    <select id="petBreed" name="petBreed" required></select>
 
     <label for="petBirthdate">Pet Birthdate:</label>
 <input type="date" id="petBirthdate" name="petBirthdate" required>
@@ -82,3 +114,36 @@
   </form>
 </body>
 </html>
+<?php 
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+$petName = $_POST['petName'];
+$petType = $_POST['petType'];
+$petBreed = $_POST['petBreed'];
+$petBirthdate = $_POST['petBirthdate'];
+$petGender = $_POST['petGender'];
+
+// Check if a file was uploaded
+if(isset($_FILES['petPicture'])){
+    $file_name = $_FILES['petPicture']['name'];
+    $file_tmp =$_FILES['petPicture']['tmp_name'];
+
+    // Move the uploaded file to a specific directory
+    move_uploaded_file($file_tmp,"../../public/images/clients-pets/".$file_name);
+    $petPicture = $file_name;
+} else {
+    $petPicture = null;
+}
+$sql = "INSERT INTO pets (owner_id, pet_name, pet_type, pet_breed, pet_birthdate, pet_gender, pet_picture)
+ VALUES ('" . $_SESSION['ID'] . "', '$petName', '$petType', '$petBreed', '$petBirthdate', '$petGender', '$petPicture')";
+ try {
+        mysqli_query($conn, $sql);
+        echo "Pet successfully added to the database.";
+    } catch (Exception $e) {
+        echo "Error: " . $e->getMessage();
+    } finally {
+        mysqli_close($conn);
+    }
+
+}
+?>
