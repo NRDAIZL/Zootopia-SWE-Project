@@ -1,4 +1,4 @@
-
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
    <head>
@@ -22,7 +22,6 @@
 </form>
 
  <?php
-   session_start();
    include_once "../../config/dbh.inc.php";
    //grab data from user and see if it exists in database
    if($_SERVER["REQUEST_METHOD"]=="POST"){
@@ -33,12 +32,13 @@
 	$result = mysqli_query($conn,$sql);
     if($row=mysqli_fetch_array($result))	{ //fetching the user data
 		$_SESSION["ID"]=$row[0];
-		$_SESSION["FName"]=$row["FirstName"];
-		$_SESSION["LName"]=$row["LastName"];
+		$_SESSION["Fname"]=$row["Fname"];
+		$_SESSION["Lname"]=$row["Lname"];
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
-		
-		header("Location:viewprofile.php");;
+		// var_dump($_SESSION);
+		header("Location:Home.php");
+
 	}
 	else	{
 		echo "Invalid Email or Password";

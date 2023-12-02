@@ -1,5 +1,6 @@
 <?php
   include_once "../../config/dbh.inc.php";
+  session_start();
 ?>
 
 
@@ -87,7 +88,7 @@ echo "<input type='hidden' name='check-out-date' value='$checkOutDate'>";
 echo "<input type='hidden' name='animal-type' value='$animalType'>";
 echo "<input type='hidden' name='pet-gender' value='$petGender'>";
 echo "<input type='hidden' name='price' value='$totalPrice'>";
-echo "<button type='submit'>Confirm Booking</button>";
+// echo "<button type='submit'>Confirm Booking</button>";
 echo "</form>";
 
 // Grab data from user if form was submitted
@@ -111,8 +112,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $petGender = mysqli_real_escape_string($conn, $_POST['gender']);
 
     // Create an SQL query to insert the data
-    $sql = "INSERT INTO bookings (booking_type, check_in_date, check_out_date, animal_type, pet_gender,Fname)
-            VALUES ('$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender','$_SESSION['FName']')";
+    // $sql = "INSERT INTO bookings (Fname,booking_type, check_in_date, check_out_date, animal_type, pet_gender)
+    //         VALUES ($_SESSION[Fname],'$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender')";
+ $sql = "INSERT INTO bookings (client_id,Fname,booking_type, check_in_date, check_out_date, animal_type, pet_gender,price)
+            VALUES ('" . $_SESSION['ID'] . "','" . $_SESSION['Fname'] . "','$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender','$totalPrice')";
 
     // Perform the query
     try {

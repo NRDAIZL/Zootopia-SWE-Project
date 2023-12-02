@@ -77,14 +77,23 @@ function updateaptime()
     }
 }
 
-// var pettype1=document.getElementById("pettypeid").value
-function apvalidate(){
-    alert("hiiiiiiiiii")
-    console.log("hihelloo")
-    return true
-    // if(pettype1=="0"){
-    //     alert(puttt)
+
+
+function apvalidateForm() 
+{
+    // var pettype = document.getElementById("pettypeid").value;
+    // var petname = document.getElementById("petnameid").value;
+    // var apday = document.getElementById("apday").value;
+    // var aptime = document.getElementById("aptime").value;
+console.log("hiihellooooo");
+    alert("hiiiiiiiiii");
+    // var pettype = document.forms["apform"]["pettype"].value;
+
+    // if (pettype === "") {
+    //     alert("Please select the pet type.");
+    //     return false;
     // }
+
 }
 
 

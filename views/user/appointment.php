@@ -21,9 +21,8 @@
 <!-- action="apvalidate()" 
 onsubmit="return apvalidate()"
 -->
-  <form  action="" method="post">
     
-   
+     <form onsubmit="return apvalidateForm()" action="" method="post">
     <!-- <div class="row"> -->
       <!-- <div class="col-25"> -->
         <br><br>
@@ -88,14 +87,17 @@ onsubmit="return apvalidate()"
       </select>
       <br><br>
       <!-- <a href="Home.php"> -->
-        <!-- <input type="submit" class="apbtn" id="apbtn" value="submit the booking"> -->
-        <button class="apbtn" id="apbtn" type="submit"> Submit </button>
+        <input type="submit" class="apbtn" id="apbtn" value="submit">
+        <!-- <button class="apbtn" id="apbtn" type="submit"> Submit </button> -->
     <!-- </a> -->
       
-       
+    
   </form>
 <!-- ////////////////////////// -->
 <?php
+
+
+
 // Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
@@ -109,6 +111,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $sql = "INSERT INTO appointments (pettype	,petname	,appointmentday	,appointmenttime)
             VALUES ('$pettype1', '$petname1', '$apday11', '$aptime11')";
 
+
+// if (empty($pettype1)) {
+//   echo "plz select the pet type.<br>";
+//   return false;
+// }
+
     // Perform the query
     try {
         mysqli_query($conn, $sql);
@@ -119,7 +127,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } finally {
         mysqli_close($conn);
     }
+
+    
+
+
+
+
 }
+
 
 ?>
 

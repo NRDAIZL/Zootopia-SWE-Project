@@ -92,9 +92,66 @@ button {
     margin-left:250px;
     margin-top: 24px;
 }
+    samp {
+    color: red;
+    font-family:'Times New Roman', Times, serif;
+}
 </style>
 </head>
 <body>
+    <form method="post">
+          
+    <?php
+//session_start(); 
+  $host ="localhost";
+  $user="root";
+  $pass="123459";
+  $db="test4"; 
+$conn= mysqli_connect($host,$user,$pass,$db);
+$Fname="";
+$Lname="";
+$Email="";
+$Password="";
+if(isset($_POST['FirstName'])){
+    $Fname=$_POST['FirstName'];
+}
+if(isset($_POST['LastName'])){
+    $Lname=$_POST['LastName'];
+}
+if(isset($_POST['email'])){
+    $Email=$_POST['email'];
+}
+if(isset($_POST['password'])){
+    $Password=$_POST['password'];
+}
+if(!preg_match("/^[A-Z][a-z]+$/", $Fname)){
+$FnError="Invalid first name";
+$error=1;
+}
+if(!preg_match("/^[A-Z][a-z]+$/", $Lname)){
+    $LnError="Invalid last name";
+    $error=1;
+    }
+$EError="";
+$PError="";
+//$sql1="insert into users value('Ahmed','Ali','ahmed2157@gmail.com','ufyt')";
+ if (isset($_POST['update'])){
+   $sql1="update users set FirstName= '$Fname' ,LastName = '$Lname' ,Password ='$Password' where Email='$Email'";
+ mysqli_query($conn,$sql1);
+//header("location: menu.php");
+
+
+      
+    
+}
+ 
+
+if (isset($_POST['cancel'])){
+    
+    header("location: menu.php");
+
+}
+?>
     <div class="b1" >
         <br><br>
 <h1>Edit Profile</h1>
@@ -107,11 +164,13 @@ button {
             <legend>User Info</legend>
             <div class="b3">
             <label>First Name:</label>
+                   <samp><?php if(!empty($FnError)){echo $FnError; }?></samp>
         <input type="text" required value="Ahmed" name="FirstName" >
             </div>
             <br>
             <div class="b4">
             <label>Last Name:</label>
+                    <samp><?php if(!empty($LnError)){echo $LnError; }?></samp>
         <input type="text" required value="Mohamed" name="LastName">
             </div>
             <br>
@@ -124,14 +183,56 @@ button {
             <label>Password:</label>
         <input type="password" required value="Ahgeuie54#" name="password" disabled>
             </div>
-            <button type="button" id="qaz">Cancel</button>
-    <button type="button" id="qwe">Save</button>
+            <button type="submit" id="qaz" name="cancel">Cancel</button>
+    <button type="submit" id="qwe" name="update">Update</button>
               </fieldset>
             
     </div>
     
     <div class="r1"></div>
     </div>
+    <?php
+session_start(); 
+  $host ="localhost";
+  $user="root";
+  $pass="123459";
+  $db="test4"; 
+$conn= mysqli_connect($host,$user,$pass,$db);
+//$Fname="";
+$Lname="";
+$Email="";
+$Password="";
+if(isset($_POST['FirstName'])){
+    $Fname=$_POST['FirstName'];
+}
+if(isset($_POST['LastName'])){
+    $Lname=$_POST['LastName'];
+}
+if(isset($_POST['email'])){
+    $Email=$_POST['email'];
+}
+if(isset($_POST['password'])){
+    $Password=$_POST['password'];
+}
+
+$FnError="";
+$LnError="";
+$EError="";
+$PError="";
+//$sql1="insert into users value('Ahmed','Ali','ahmed2157@gmail.com','ufyt')";
+ if (isset($_POST['update'])){
+   $sql1="update users set FirstName= '$Fname' ,LastName = '$Lname' ,Password ='$Password' where Email='$Email'";
+ mysqli_query($conn,$sql1);
+//header("location: menu.php");
+
+ }
+
+if (isset($_POST['cancel'])){
     
+    header("location: menu.php");
+
+}
+?>
+    </form>
 </body>
 </html>
