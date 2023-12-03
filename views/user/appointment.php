@@ -63,7 +63,7 @@ onsubmit="return apvalidate()"
 
 
 
-      <br><br>
+      <!-- <br><br>
       <label for="apday" class="choose">Choose a day:</label>
       <select class="selectt" name="apday" id="apday" onchange="updateaptime()" required>
         <div class="optionn">
@@ -78,8 +78,36 @@ onsubmit="return apvalidate()"
 
       </div>
       </select>
-      <br><br>
+      <br><br> -->
+      <?php
+//display avaliable days and times from database in dropdown lists
+$query = 'SELECT days FROM availabletime';
+$result = $conn->query($query);
 
+if ($result->num_rows > 0) {
+    // Fetch rows and store them in an array
+    $rows = $result->fetch_all(MYSQLI_ASSOC);
+} else {
+    echo 'No data found.';
+}
+?>
+      <br><br>
+      <label for="apday" class="choose">Choose a day:</label>
+<select class="selectt" name="apday" id="apday">
+    <option value="">Select day</option>
+    <?php
+    foreach ($rows as $row) {
+        $day = $row['days'];
+        echo "<option value=\"$day\">$day</option>";
+    }
+    ?>
+</select>
+
+
+
+
+
+      <br><br>
       <label for="aptime" class="choose">Choose time:</label>
       <select class="selectt" name="aptime" id="aptime" required>
         <option class="optionn" value="0">select time</option>
@@ -95,9 +123,31 @@ onsubmit="return apvalidate()"
   </form>
 <!-- ////////////////////////// -->
 <?php
+// //display avaliable days and times from database in dropdown lists
+// $query = 'SELECT days FROM availabletime';
+// $result = $conn->query($query);
 
+// if ($result->num_rows > 0) {
+//     // Fetch rows and store them in an array
+//     $rows = $result->fetch_all(MYSQLI_ASSOC);
+// } else {
+//     echo 'No data found.';
+// }
+// /////////////
+// // <label for="apday" class="choose">Choose a day:</label>
+// //       <select class="selectt" name="apday" id="apday" onchange="updateaptime()" required>
+// echo'<label for="apday" class="choose">Choose a day:</label>';
+// echo '<select class="selectt" name="apday" id="apday">';
+// foreach ($rows as $row) {
+//     $dayss = $row['days'];
+//     //$name = $row['name'];
 
+//     // Output option element
+//     echo "<option value=\"$dayss\">$dayss</option>";
+// }
+// echo '</select>';
 
+///////////////elform el3adiya
 // Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
