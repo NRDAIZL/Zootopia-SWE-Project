@@ -108,8 +108,8 @@
     
     <body>
     <?php include '../partials/menu.php';?>
-    <h2 class="fet">FEATURES</h2>
-<h1>Our Services.</h2>
+  
+<h1>Our Services.</h1>
    <div class="row">
       <div class="box">
 <img src="../../public/images/img.02.png">
