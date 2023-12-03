@@ -40,6 +40,7 @@
     </style>
     <script>
        $(document).ready(function () {
+        $(document).ready(function () {
     function loadPetNames() {
         // Make an AJAX request to fetch pet names based on the owner ID
         $.ajax({
@@ -52,6 +53,14 @@
     }
 
     loadPetNames(); // Load initial pet names on page load
+});
+
+    // Set the corresponding petId when petName is selected
+    $("#petName").change(function () {
+        var selectedPetId = $("#petName option:selected").data("petid");
+        $("#petId").val(selectedPetId);
+    });
+
 });
 
     </script>
@@ -90,6 +99,8 @@ session_start();
 <select id="petName" name="petName" required>
    <!-- Options will be dynamically loaded here -->
 </select>
+<!-- Add a hidden input field for petId -->
+<input type="hidden" id="petId" name="petId">
 
 <br>
        
