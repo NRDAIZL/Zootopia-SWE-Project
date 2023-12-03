@@ -85,6 +85,12 @@ $result = $conn->query($sql);
 			<div class="report-container">
 				<div class="report-header">
 					<h1 class="recent-Articles">Hotel bookings</h1>
+					<form method="post">
+  <label for="selectedDate">Select Date:</label>
+  <input type="date" name="selectedDate" id="selectedDate" required>
+  <button type="submit">Search Bookings</button>
+</form>
+
 					<button class="view">View All</button>
 				</div>
 
@@ -92,6 +98,18 @@ $result = $conn->query($sql);
 				
     <div class="items">
 	<?php 
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+	$selectedDate = $_POST['selectedDate'];
+	$sql = "SELECT * FROM bookings b
+	 JOIN users u ON b.client_id = u.ID
+        JOIN pets p ON b.pet_id = p.pet_id
+        -- WHERE check_in_date BETWEEN '$selectedDate' AND '$selectedDate'
+        -- OR check_out_date BETWEEN '$selectedDate' AND '$selectedDate'
+		WHERE '$selectedDate' BETWEEN check_in_date AND check_out_date";
+$result = $conn->query($sql);
+
+	}
+	
 if ($result->num_rows > 0) {
   echo "<table>";
   echo "<tr>";

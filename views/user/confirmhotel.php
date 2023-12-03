@@ -67,26 +67,12 @@ $petId = $_POST['petId'];
 // Get the number of nights
 $numberOfNights = calculateNights($checkInDate, $checkOutDate);
 $pricePerNight =100;
+$dayCarePrice =80;
 
 // Calculate the price of the booking
 $totalPrice = $numberOfNights * $pricePerNight;
 
-// Display the confirmation page
-echo "<h1>Booking Confirmation</h1>";
-echo "<p>Booking type: $bookingType</p>";
-echo "<p>Check-in date: $checkInDate</p>";
-echo "<p>Check-out date: $checkOutDate</p>";
-echo "<p>Price: $totalPrice</p>";
 
-echo "<form action='process.php' method='post'>";
-echo "<input type='hidden' name='booking-type' value='$bookingType'>";
-echo "<input type='hidden' name='check-in-date' value='$checkInDate'>";
-echo "<input type='hidden' name='check-out-date' value='$checkOutDate'>";
-echo "<input type='hidden' name='price' value='$totalPrice'>";
-// echo "<button type='submit'>Confirm Booking</button>";
-echo "</form>";
-
-// Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
     $bookingType = mysqli_real_escape_string($conn, $_POST['booking-type']);
@@ -95,7 +81,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // If the booking type is daytime, then the check-out date is not required
     if ($bookingType === 'daycare') {
-        $checkOutDate = null;
+        $checkOutDate = $checkInDate;
+        $totalPrice =$dayCarePrice;
     }
 
     // Convert the dates to the correct format
@@ -122,6 +109,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         mysqli_close($conn);
     }
 }
+
+
+
+
+// Display the confirmation page
+echo "<h1>Booking Confirmation</h1>";
+echo "<p>Booking type: $bookingType</p>";
+echo "<p>Check-in date: $checkInDate</p>";
+echo "<p>Check-out date: $checkOutDate</p>";
+echo "<p>Price: $totalPrice</p>";
+
+echo "<form action='process.php' method='post'>";
+echo "<input type='hidden' name='booking-type' value='$bookingType'>";
+echo "<input type='hidden' name='check-in-date' value='$checkInDate'>";
+echo "<input type='hidden' name='check-out-date' value='$checkOutDate'>";
+echo "<input type='hidden' name='price' value='$totalPrice'>";
+// echo "<button type='submit'>Confirm Booking</button>";
+echo "</form>";
+
+// Grab data from user if form was submitted
+
 ?>
 
 
