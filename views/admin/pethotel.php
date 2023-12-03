@@ -22,11 +22,17 @@
 
 </head>
 <?php 
-$sql = "SELECT u.Fname, b.pet_name, b.pet_type, b.pet_breed, ph.check_in_date, ph.check_out_date, ph.price
-        FROM users u
-        JOIN bookings ph ON u.ID = ph.client_id
-        JOIN pets b ON ph.animal_type = b.pet_type";  // Assuming animal_type is the column representing pet_type in the bookings table
-
+// $sql = "SELECT u.Fname, b.pet_name, b.pet_type, b.pet_breed, ph.check_in_date, ph.check_out_date, ph.price
+//         FROM users u
+//         JOIN bookings ph ON u.ID = ph.client_id
+//         JOIN pets b ON ph.animal_type = b.pet_type";  // Assuming animal_type is the column representing pet_type in the bookings table
+// $sql = "SELECT * FROM bookings b
+// JOIN users u ON b.client_id = b.ID
+// JOIN pets p ON b.pet_id = p.pet_id";
+// $result = $conn->query($sql);
+$sql = "SELECT * FROM bookings b
+        JOIN users u ON b.client_id = u.ID
+        JOIN pets p ON b.pet_id = p.pet_id";
 $result = $conn->query($sql);
 
 

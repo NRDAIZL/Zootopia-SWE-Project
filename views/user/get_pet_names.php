@@ -5,12 +5,12 @@ session_start();
 $ownerID = $_SESSION['ID'];
 
 // Fetch pet names based on the owner ID
-$sql = "SELECT DISTINCT pet_name FROM pets WHERE owner_id = '$ownerID'";
+$sql = "SELECT pet_id, pet_name FROM pets WHERE owner_id = '$ownerID'";
 $result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
     while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row['pet_name'] . "'>" . $row['pet_name'] . "</option>";
+        echo "<option value='" . $row['pet_name'] . "' data-petid='" . $row['pet_id'] . "'>" . $row['pet_name'] . "</option>";
     }
 } else {
     echo "<option value=''>No pets found</option>";

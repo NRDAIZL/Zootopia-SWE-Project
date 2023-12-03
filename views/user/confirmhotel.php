@@ -63,8 +63,7 @@
 $bookingType = $_POST['booking-type'];
 $checkInDate = $_POST['datepicker-check-in'];
 $checkOutDate = $_POST['datepicker-check-out'];
-$animalType = $_POST['animal-type'];
-$petGender = $_POST['gender'];
+$petId = $_POST['petId'];
 // Get the number of nights
 $numberOfNights = calculateNights($checkInDate, $checkOutDate);
 $pricePerNight =100;
@@ -77,16 +76,12 @@ echo "<h1>Booking Confirmation</h1>";
 echo "<p>Booking type: $bookingType</p>";
 echo "<p>Check-in date: $checkInDate</p>";
 echo "<p>Check-out date: $checkOutDate</p>";
-echo "<p>Animal type: $animalType</p>";
-echo "<p>Pet gender: $petGender</p>";
 echo "<p>Price: $totalPrice</p>";
 
 echo "<form action='process.php' method='post'>";
 echo "<input type='hidden' name='booking-type' value='$bookingType'>";
 echo "<input type='hidden' name='check-in-date' value='$checkInDate'>";
 echo "<input type='hidden' name='check-out-date' value='$checkOutDate'>";
-echo "<input type='hidden' name='animal-type' value='$animalType'>";
-echo "<input type='hidden' name='pet-gender' value='$petGender'>";
 echo "<input type='hidden' name='price' value='$totalPrice'>";
 // echo "<button type='submit'>Confirm Booking</button>";
 echo "</form>";
@@ -108,19 +103,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $checkOutDate = $checkOutDate === null ? '' : date_format(date_create_from_format("m/d/Y", $checkOutDate), "Y-m-d");
 
     // Escape the animal type and pet gender
-    $animalType = mysqli_real_escape_string($conn, $_POST['animal-type']);
-    $petGender = mysqli_real_escape_string($conn, $_POST['gender']);
 
     // Create an SQL query to insert the data
     // $sql = "INSERT INTO bookings (Fname,booking_type, check_in_date, check_out_date, animal_type, pet_gender)
     //         VALUES ($_SESSION[Fname],'$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender')";
- $sql = "INSERT INTO bookings (client_id,Fname,booking_type, check_in_date, check_out_date, animal_type, pet_gender,price)
-            VALUES ('" . $_SESSION['ID'] . "','" . $_SESSION['Fname'] . "','$bookingType', '$checkInDate', '$checkOutDate', '$animalType', '$petGender','$totalPrice')";
+ $sql = "INSERT INTO bookings (client_id,pet_id,booking_type, check_in_date, check_out_date,price)
+            VALUES ('" . $_SESSION['ID'] . "','$petId','$bookingType', '$checkInDate', '$checkOutDate', '$totalPrice')";
 
     // Perform the query
     try {
         mysqli_query($conn, $sql);
         echo "Booking successfully added to the database.";
+        var_dump($petId);
+
     } catch (Exception $e) {
         echo "Error: " . $e->getMessage();
     } finally {
