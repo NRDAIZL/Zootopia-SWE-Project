@@ -1,3 +1,4 @@
+<!-- as abbreviation for admin side  -->
 <!DOCTYPE html>
 <html lang="en">
 

@@ -13,14 +13,12 @@
 <body>
   
 <?php include '../partials/menu.php';?>
+<?php include '../partials/footer.php';?>
     <!-- <p>The select element is used to create a drop-down list.</p> -->
     
     <!-- <form action="/action_page.php"> -->
 <!-- ///////////////////// -->
 <div class="container">
-<!-- action="apvalidate()" 
-onsubmit="return apvalidate()"
--->
     <!-- onsubmit="return apvalidateForm()" -->
      <form  action="" onsubmit="return apvalidateForm()" method="post">
     <!-- <div class="row"> -->
