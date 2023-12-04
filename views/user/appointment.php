@@ -22,7 +22,7 @@
 onsubmit="return apvalidate()"
 -->
     <!-- onsubmit="return apvalidateForm()" -->
-     <form  action="" method="post">
+     <form  action="" onsubmit="return apvalidateForm()" method="post">
     <!-- <div class="row"> -->
       <!-- <div class="col-25"> -->
         <br><br>
@@ -30,6 +30,7 @@ onsubmit="return apvalidate()"
       <!-- </div> -->
       <!-- <div class="col-75"> -->
         <select id="pettypeid" class="selectt" name="pettype" class="pettypee"  required>
+        
         <div class="optionn">
 
         <option value="0">select pet</option>
@@ -45,6 +46,9 @@ onsubmit="return apvalidate()"
           <option value="other">Other</option>
         </div>
         </select>
+        <div id="petTypeError" class="error-message"></div>
+        
+
       <!-- </div> -->
     <!-- </div> -->
 
@@ -63,22 +67,7 @@ onsubmit="return apvalidate()"
 
 
 
-      <!-- <br><br>
-      <label for="apday" class="choose">Choose a day:</label>
-      <select class="selectt" name="apday" id="apday" onchange="updateaptime()" required>
-        <div class="optionn">
-        <option value="">select day</option>
-        <option value="sun">sunday</option>
-        <option value="mon">monday</option>
-        <option value="tues">tuesday</option>
-        <option value="wends">wendsday</option>
-        <option value="thurs">thursday</option>
-        <option value="fri">friday</option>      
-        <option value="satur">saturday</option>
-
-      </div>
-      </select>
-      <br><br> -->
+      
       <?php
 //display avaliable days and times from database in dropdown lists
 $query = 'SELECT days FROM availabletime';
@@ -102,6 +91,7 @@ if ($result->num_rows > 0) {
     }
     ?>
 </select>
+<div id="apDayError" class="error-message"></div>
 
 
 
@@ -113,41 +103,24 @@ if ($result->num_rows > 0) {
         <option class="optionn" value="0">select time</option>
         
       </select>
+      <div id="apTimeError" class="error-message"></div>
+     
+
       <br><br>
       <!-- <a href="Home.php"> -->
         <input type="submit" class="apbtn" id="apbtn" value="submit">
         <!-- <button class="apbtn" id="apbtn" type="submit"> Submit </button> -->
     <!-- </a> -->
+      <!-- Inside the body of your HTML -->
       
+      <!-- <div id="errorMessage" class="error-message-container"></div> -->
     
   </form>
 <!-- ////////////////////////// -->
 <?php
-// //display avaliable days and times from database in dropdown lists
-// $query = 'SELECT days FROM availabletime';
-// $result = $conn->query($query);
 
-// if ($result->num_rows > 0) {
-//     // Fetch rows and store them in an array
-//     $rows = $result->fetch_all(MYSQLI_ASSOC);
-// } else {
-//     echo 'No data found.';
-// }
-// /////////////
-// // <label for="apday" class="choose">Choose a day:</label>
-// //       <select class="selectt" name="apday" id="apday" onchange="updateaptime()" required>
-// echo'<label for="apday" class="choose">Choose a day:</label>';
-// echo '<select class="selectt" name="apday" id="apday">';
-// foreach ($rows as $row) {
-//     $dayss = $row['days'];
-//     //$name = $row['name'];
 
-//     // Output option element
-//     echo "<option value=\"$dayss\">$dayss</option>";
-// }
-// echo '</select>';
 
-///////////////elform el3adiya
 // Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
@@ -188,14 +161,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
 ?>
 
-
-
-<!-- ////////////////////////// -->
-
 </div>
- 
-   
+  
 </body>
-
 
 </html>

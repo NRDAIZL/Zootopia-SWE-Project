@@ -48,3 +48,16 @@
   *:not(img){
     text-align: center;
 }
+
+.error-message {
+  color: red;
+    margin-top: 5px; 
+    display: inline-block; /* Display error messages as inline elements */
+
+}
+.error-message-container{
+  color: red;
+  margin-top: 5px; 
+  display: inline-block; /* Display error messages as inline elements */
+
+}
