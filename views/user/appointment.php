@@ -21,8 +21,8 @@
 <!-- action="apvalidate()" 
 onsubmit="return apvalidate()"
 -->
-    
-     <form onsubmit="return apvalidateForm()" action="" method="post">
+    <!-- onsubmit="return apvalidateForm()" -->
+     <form  action="" method="post">
     <!-- <div class="row"> -->
       <!-- <div class="col-25"> -->
         <br><br>

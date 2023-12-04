@@ -85,8 +85,8 @@ function apvalidateForm()
     // var petname = document.getElementById("petnameid").value;
     // var apday = document.getElementById("apday").value;
     // var aptime = document.getElementById("aptime").value;
-console.log("hiihellooooo");
-    alert("hiiiiiiiiii");
+//console.log("hiihellooooo");
+   // alert("hiiiiiiiiii");
     // var pettype = document.forms["apform"]["pettype"].value;
 
     // if (pettype === "") {
