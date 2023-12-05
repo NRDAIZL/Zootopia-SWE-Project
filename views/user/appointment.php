@@ -3,17 +3,18 @@
 <head>
   <meta charset="UTF-8">
   <title>book an appointment</title>
-  <script src="../../public/javascript/appointment.js"></script>
-  <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
   <?php
   include_once "../../config/dbh.inc.php";
 ?>
+  <script src="../../public/javascript/appointment.js"></script>
+  <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
+ 
   
 </head>
 <body>
   
 <?php include '../partials/menu.php';?>
-<?php include '../partials/footer.php';?>
+<!-- ?php include '../partials/footer.php';?> -->
     <!-- <p>The select element is used to create a drop-down list.</p> -->
     
     <!-- <form action="/action_page.php"> -->
@@ -80,7 +81,8 @@ if ($result->num_rows > 0) {
 ?>
       <br><br>
       <label for="apday" class="choose">Choose a day:</label>
-<select class="selectt" name="apday" id="apday">
+     
+<select class="selectt" name="apday" id="apday" onchange="updateaptime()" >
     <option value="">Select day</option>
     <?php
     foreach ($rows as $row) {
@@ -91,10 +93,6 @@ if ($result->num_rows > 0) {
 </select>
 <div id="apDayError" class="error-message"></div>
 
-
-
-
-
       <br><br>
       <label for="aptime" class="choose">Choose time:</label>
       <select class="selectt" name="aptime" id="aptime" required>
@@ -102,8 +100,6 @@ if ($result->num_rows > 0) {
         
       </select>
       <div id="apTimeError" class="error-message"></div>
-     
-
       <br><br>
       <!-- <a href="Home.php"> -->
         <input type="submit" class="apbtn" id="apbtn" value="submit">

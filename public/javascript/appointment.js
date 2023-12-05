@@ -1,3 +1,18 @@
+function updateaptime() {
+    console.log("infunc");
+
+ 
+              }
+
+              // for(i=0;i<rows.length;i++){
+//                     // var opt=document.createElement("option")
+//                     // opt.text=timesun[i]
+//                     // document.getElementById("aptime").appendChild(opt)
+//                     console.log("hi");
+//                 }
+
+
+
 
 // var timesun=["1:00","2:00","3:00"]
 // var timemon=["3:00","4:00","5:00"]
@@ -15,7 +30,6 @@
 //     document.getElementById("myForm").style.display = "none";
    
 //   }
-
 
 // function updateaptime()
 // {
