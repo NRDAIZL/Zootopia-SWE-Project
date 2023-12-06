@@ -1,0 +1,20 @@
+body {
+    background-image: url("../../public/images/CatCuteAwyTbh.png");
+    background-repeat: no-repeat;
+    background-position: center 100;
+    background-size: cover;
+}
+
+#LoginForm {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: #ff4040;
+    width: 20%;
+    height: 20%;
+    margin: 200px auto;
+    padding: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border-radius: 40px;
+}

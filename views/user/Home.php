@@ -4,7 +4,7 @@
 <head>
     
     <title>Zootopia Home Page</title>
-    <link rel= "stylesheet" href="../../public/css/designHome.css"/>
+    <link rel= "stylesheet" href="../../public/css/designHome.css">
 </head>
 
 <body>
@@ -40,27 +40,28 @@ else{
 ?>
 
 <div id="image_row1">
-<br><br>
-<a href="services.php"> <!-- Waiting for sondos to add the services page -->
-    <button id="Services">Services</button>
-</a>
-
-<br><br>
-<a href="appointment.php">
-<button id="Appoitments">Appointments</button>
-</a>
-
-
-
-<br><br>
-<a href="hotelbook.php">
-<button id="Host">Pet Hosting</button>
-</a>
-
-<br><br>
-<a href="vaccine.php">
-<button id="Vaccines" >Vaccines</button>
-</a>
+    <table id="TableContents">
+        <th>
+            <a href="services.php"> 
+                <button id="Services">Services</button>
+            </a>
+        </th>
+        <th>
+            <a href="appointment.php">
+                <button id="Appoitments">Appointments</button>
+            </a>
+        </th>
+        <th>
+            <a href="hotelbook.php">
+                <button id="Host">Pet Hosting</button>
+            </a>
+        </th>
+        <th>
+            <a href="vaccine.php">
+                <button id="Vaccines" >Vaccines</button>
+            </a>
+        </th>
+    </table>
 </div>
 
-</html>
+</html> 

@@ -2,14 +2,16 @@
 <!DOCTYPE html>
 <html>
    <head>
-     <title></title>
+     <title>Login</title>
+     <link rel= "stylesheet" href="../../public/css/designLogin.css"/>
    </head>
 
    <body>
+    
    <?php include '../partials/menu.php'; ?>
-
+   <div id="LoginForm">
       <h1>Login</h1>
-      <form action="" method="post">
+    <form action="" method="post">
       <label>Email:</label><br>
       <input type="text" name="Email">  <br>
       <label>Password:</label><br>
@@ -20,7 +22,7 @@
 
 
 </form>
-
+    </div>
  <?php
    include_once "../../config/dbh.inc.php";
    //grab data from user and see if it exists in database

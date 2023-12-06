@@ -9,12 +9,12 @@
   <html>
     <head>
       <title>Sign Up</title>
-      <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
+      <link rel= "stylesheet" href="../../public/css/designSignup.css">
     </head>
 
     <body>
     <?php include '../partials/menu.php'; ?>
-
+<div id="SignUpForm">
     <div id="form">
       <h1 id="Title" style="font-family: Arial" >Sign Up</h1>
     
@@ -38,6 +38,7 @@
 
   </div>
   </form>
+</div>
   </div>
   <?php
   //grap data from user if form was submitted 
@@ -50,13 +51,25 @@
     
 
       //insert it to database 
-$sql = "INSERT INTO users(Fname,Lname,Email,Password) 
+
+    if(strlen($Fname)< 3){ //Validated Name
+      echo "Name too short, please enter a suitable name.";
+    }
+    elseif(str_contains($Email, "@gmail.com") or str_contains($Email, "@hotmail.com") or str_contains($Email, "@outlook.com")){ //Validate Email
+      echo "Please enter valid Email.";
+    }
+    elseif(strlen($Password)<6){ //Validate Password
+      echo "Password should be 7 characters or more.";
+    }
+    else{
+      $sql = "INSERT INTO users(Fname,Lname,Email,Password)
       values('$Fname','$Lname','$Email','$Password')";
 
-    $result=mysqli_query($conn,$sql);
+      $result=mysqli_query($conn,$sql);
     
-    var_dump($result);
+      var_dump($result);
 
+    
 
       //redirect the user back to index.php 
     if($result)	{
@@ -79,8 +92,8 @@ if ($row = mysqli_fetch_assoc($result)) {
     } else {
       echo "Error: " . mysqli_error($conn);
   }
-  }
-
+}
+    }
   ?>
 
     </body>
