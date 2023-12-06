@@ -37,7 +37,7 @@ body{
     background-position: center center;
     background-color: #ff5454;
     border: none;
-    color: white;
+    color: black;
     padding: 50px 100px;
     text-align: center;
     text-decoration: solid;
@@ -47,7 +47,7 @@ body{
 
 
 #Vaccines{
-    background-image: url("../../public/images/Vaccinated\ Cat\ 2.jpg");
+    background-image: url("../../public/images/Vaccinated\ Cat\2.jpg");
     background-size: cover;
     background-position: center center;
     background-color: #ff5454;
@@ -62,6 +62,7 @@ body{
 }
 
 #image_row1{
+    
     width: 20%;
     height: 20%;
     margin: 200px auto;
@@ -70,4 +71,7 @@ body{
     justify-content: center;
     align-items: center;
     align-content: center;
+}
+#TableContents{
+    border: 2px black;
 }
