@@ -9,20 +9,27 @@
    <body>
     
    <?php include '../partials/menu.php'; ?>
-   <div id="LoginForm">
+   <div class="center">
       <h1>Login</h1>
-    <form action="" method="post">
-      <label>Email:</label><br>
-      <input type="text" name="Email">  <br>
-      <label>Password:</label><br>
-      <input type="Password" name="Password"><br>
-      <input type="submit" value="Submit" name="Submit">
-      <input type="reset">
-      <p>First Time?</p><a class="ho" href="../../views/user/SignUp.php">Sign up</a>
+          <form method="post">
+            <div class="txt_field">           
+              <input type="text" name="Email" required>
+              <span></span>
+              <label>Email</label>              
+            </div>
+            <div class="txt_field">
+              <input type="password" name="Password" required>
+              <span></span>
+              <label>Password</label>
+            </div>
+              <input type="submit" value="Submit" name="Submit">
+              
+              <div class="signup_link">
+            <p>First Time?</p><a class="ho" href="../../views/user/SignUp.php">Sign up</a>
+              </div>
 
-
-</form>
-    </div>
+          </form>
+</div>
  <?php
    include_once "../../config/dbh.inc.php";
    //grab data from user and see if it exists in database

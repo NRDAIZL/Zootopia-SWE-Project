@@ -15,28 +15,31 @@
     <body>
     <?php include '../partials/menu.php'; ?>
 <div id="SignUpForm">
+  
     <div id="form">
-      <h1 id="Title" style="font-family: Arial" >Sign Up</h1>
-    
+
+      <h1 id="Title" style="font-family: Arial" >Sign Up   ‎ </h1>
+        
     <form action="" method="post">
       <div id="formBoxes">
     <label style="font-family: Arial">First Name:</label><br>
-    <input type="text" name="FirstName"><br>
+    <input type="text" name="FirstName"><br><br>
 
     <label style="font-family: Arial">Last Name:</label><br>
-    <input type="text" name="LastName"><br>
+    <input type="text" name="LastName"><br><br>
 
     <label style="font-family: Arial">Email:</label><br>
-    <input type="text" name="Email"><br>
+    <input type="text" name="Email"><br><br>
 
     <label style="font-family: Arial">Password:</label><br>
     <input type="Password" name="Password"><br>
 
     <input style="font-family: Arial" type="submit" value="Submit" name="Submit">
     <input style="font-family: Arial" type="reset">
-    <p>Already have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
+    <p style="font-family:verdana">Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
 
   </div>
+  
   </form>
 </div>
   </div>
