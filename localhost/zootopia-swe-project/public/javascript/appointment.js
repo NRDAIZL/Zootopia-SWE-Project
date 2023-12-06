@@ -5,9 +5,10 @@ function updateaptime() {
  //  alert("hi from func");
  // return 0;
    
- console.log("hih     elllc");
+ console.log("hihelllc");
 
                }
+
 
               // for(i=0;i<rows.length;i++){
 //                     // var opt=document.createElement("option")
@@ -154,8 +155,6 @@ function clearErrorMessages() {
     for (var i = 0; i < errorElements.length; i++) {
         errorElements[i].innerHTML = "";
     }
-   
 }
-
 
 
