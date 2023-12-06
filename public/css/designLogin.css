@@ -21,6 +21,7 @@ body {
   .center h1{
     text-align: center;
     padding: 20px 0;
+    margin: 0 25px;
     border-bottom: 1px solid silver;
   }
   .center form{
