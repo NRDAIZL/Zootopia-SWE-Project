@@ -1,8 +1,13 @@
 function updateaptime() {
-    console.log("infunc");
+    // var apday1=document.getElementById("apday").value
+  //alert(apday1)
+    // console.log("inn     funccccc");
+ //  alert("hi from func");
+ // return 0;
+   
+ console.log("hihelllc");
 
- 
-              }
+               }
 
               // for(i=0;i<rows.length;i++){
 //                     // var opt=document.createElement("option")
@@ -149,6 +154,8 @@ function clearErrorMessages() {
     for (var i = 0; i < errorElements.length; i++) {
         errorElements[i].innerHTML = "";
     }
+   
 }
+
 
 

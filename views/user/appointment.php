@@ -82,7 +82,7 @@ if ($result->num_rows > 0) {
       <br><br>
       <label for="apday" class="choose">Choose a day:</label>
      
-<select class="selectt" name="apday" id="apday" onchange="updateaptime()" >
+<select class="selectt" name="apday" id="apday" onchange="updateaptime()">
     <option value="">Select day</option>
     <?php
     foreach ($rows as $row) {
