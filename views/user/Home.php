@@ -39,7 +39,6 @@ else{
 }
 ?>
 
-
 <div id="image_row1">
 <br><br>
 <a href="services.php"> <!-- Waiting for sondos to add the services page -->
