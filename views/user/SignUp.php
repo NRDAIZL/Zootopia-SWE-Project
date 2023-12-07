@@ -36,7 +36,7 @@
               <label>Password</label>
             </div>
               <input type="submit" value="Submit" name="Submit">
-            <div class="LoginRedirectLink">
+            <div class="signup_link">
               <p>Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
             </div>
       </form>
