@@ -1,48 +1,46 @@
 <?php session_start(); ?>
-
   <?php
     include_once "../../config/dbh.inc.php";
   ?>
-
-
   <!DOCTYPE html>
   <html>
     <head>
       <title>Sign Up</title>
-      <link rel= "stylesheet" href="../../public/css/designSignup.css">
+      <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
     </head>
 
     <body>
+    
     <?php include '../partials/menu.php'; ?>
-<div id="SignUpForm">
-  
-    <div id="form">
-
-      <h1 id="Title" style="font-family: Arial" >Sign Up   ‎ </h1>
-        
-    <form action="" method="post">
-      <div id="formBoxes">
-    <label style="font-family: Arial">First Name:</label><br>
-    <input type="text" name="FirstName"><br><br>
-
-    <label style="font-family: Arial">Last Name:</label><br>
-    <input type="text" name="LastName"><br><br>
-
-    <label style="font-family: Arial">Email:</label><br>
-    <input type="text" name="Email"><br><br>
-
-    <label style="font-family: Arial">Password:</label><br>
-    <input type="Password" name="Password"><br>
-
-    <input style="font-family: Arial" type="submit" value="Submit" name="Submit">
-    <input style="font-family: Arial" type="reset">
-    <p style="font-family:verdana">Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
-
-  </div>
-  
-  </form>
-</div>
-  </div>
+    <div class="center">
+        <h1>SignUp</h1>
+          <form method="post">
+            <div class="txt_field">
+              <input type="text" name="FirstName" required>
+              <span></span>
+              <label>First Name</label>
+            </div>
+            <div class="txt_field">
+              <input type="text" name="LastName" required>
+              <span></span>
+              <label>Last Name</label>
+            </div>
+            <div class="txt_field">    
+              <input type="text" name="Email" required>
+              <span></span>
+              <label>Email</label>
+            </div>
+            <div class="txt_field">
+              <input type="Password" name="Password" required>
+              <span></span>
+              <label>Password</label>
+            </div>
+              <input type="submit" value="Submit" name="Submit">
+            <div class="LoginRedirectLink">
+              <p>Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
+            </div>
+      </form>
+    </div>
   <?php
   //grap data from user if form was submitted 
 
