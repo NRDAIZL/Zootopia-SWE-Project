@@ -14,6 +14,7 @@
 	<link rel="stylesheet"
 		href="../../public/css/admin-res.css">
         <script src="../../public/javascript/admin.js"></script>
+        <script src="../../public/javascript/availability.js"></script>
 
 </head>
 
@@ -90,6 +91,27 @@
   </form>
 
 <!-- //////////////////////////////// -->
+
+
+<!-- ?php
+
+$date = "22-02-2021 14:22:22";
+$newDate = date("d-m-Y H:i:s", strtotime($date.' +1 hour'));
+
+? -->
+
+
+
+
+<!-- //////////////////////// -->
+
+
+
+
+
+
+
+
 <?php
 
 // Include database connection
@@ -98,12 +120,23 @@ include_once "../../config/dbh.inc.php";
 if (isset($_POST['submit'])){
      $startTime = $_POST["starttime"];
    $endTime = $_POST["endtime"];
+//    $start = $_POST["starttime"]; // Assuming the start time is submitted via a form
+//    $end = $_POST['endtime']; // Assuming the end time is submitted via a form
+   
+   // Generate the array of numbers
+   $numbers = range($startTime, $endTime);
+   
+   // Insert the numbers into the database
+//    foreach ($numbers as $number) {
+//      $query = "INSERT INTO availabletime (slotStart) VALUES ('$number')";
+//      mysqli_query($conn, $query);
+//    }
 
     if(!empty($_POST['days'])){
         foreach($_POST['days']as $selectedd){
-           
+            foreach ($numbers as $number) {
             if ($selectedd=="sun"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Sunday', '$startTime', '$endTime')");
+                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime,slotStart) VALUES ('Sunday', '$startTime', '$endTime,'$number')");
 //echo $selectedd;
             }
              if ($selectedd=="mon"){
@@ -131,6 +164,15 @@ if (isset($_POST['submit'])){
             }
         }
     }
+}
+    
+    // Assuming the insertion is successful
+    echo "Numbers inserted successfully into the database!";
+
+
+
+
+
     $conn->close();
 }
 
@@ -149,3 +191,24 @@ if (isset($_POST['submit'])){
 	
 </body>
 </html>
+
+<!-- IF (
+    SELECT COUNT(*)                -- resources/courts reserved
+        FROM reservation
+        WHERE club_code = $club_code
+        AND   date_time = $date_time
+    ) = 0
+THEN PRINT "All courts available"
+ELSE IF (
+        SELECT COUNT(*)            -- resources/courts that exist
+            FROM club_resource_slot
+            WHERE club_code = $club_code
+            AND   date_time = $date_time
+        ) = (
+        SELECT COUNT(*)            -- resources/courts reserved
+            FROM reservation
+            WHERE club_code = $club_code
+            AND   date_time = $date_time
+        )
+    THEN PRINT "All courts reserved"
+    ELSE PRINT "Some courts available" -->

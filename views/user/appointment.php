@@ -21,6 +21,7 @@
 <!-- ///////////////////// -->
 <div class="container">
     <!-- onsubmit="return apvalidateForm()" -->
+    <div class="center">
      <form  action="" onsubmit="return apvalidateForm()" method="post">
     <!-- <div class="row"> -->
       <!-- <div class="col-25"> -->
@@ -79,6 +80,7 @@ if ($result->num_rows > 0) {
     echo 'No data found.';
 }
 ?>
+
       <br><br>
       <label for="apday" class="choose">Choose a day:</label>
      
@@ -90,6 +92,7 @@ if ($result->num_rows > 0) {
         echo "<option value=\"$day\">$day</option>";
     }
     ?>
+
 </select>
 <div id="apDayError" class="error-message"></div>
 
@@ -110,6 +113,7 @@ if ($result->num_rows > 0) {
       <!-- <div id="errorMessage" class="error-message-container"></div> -->
     
   </form>
+  </div>
 <!-- ////////////////////////// -->
 <?php
 
