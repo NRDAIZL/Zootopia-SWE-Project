@@ -1,4 +1,4 @@
 <?php
-echo $_SERVER['QUERY_STRING'];
-echo "welcome";
+require_once('autoload.php');
+new App();
 ?>
