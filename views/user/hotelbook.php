@@ -96,7 +96,7 @@ session_start();
     <input type="text" id="datepicker-check-out" name= "datepicker-check-out" placeholder="Check-out date">
     <!-- <input type="date"  name= "datepicker-check-in" placeholder="Check-in date">
         <input type="date"  name= "datepicker-check-out" placeholder="Check-out date"> -->
-         <label for="number-of-nights-display"> Number of nights:</label>
+         <label for="number-of-nights-display">Number of nights:</label>
 
         <div id="number-of-nights-display"></div>
         <label for="petName">Pet Name:</label>

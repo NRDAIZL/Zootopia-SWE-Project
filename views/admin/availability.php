@@ -117,64 +117,46 @@ $newDate = date("d-m-Y H:i:s", strtotime($date.' +1 hour'));
 // Include database connection
 include_once "../../config/dbh.inc.php";
 
-if (isset($_POST['submit'])){
-     $startTime = $_POST["starttime"];
-   $endTime = $_POST["endtime"];
-//    $start = $_POST["starttime"]; // Assuming the start time is submitted via a form
-//    $end = $_POST['endtime']; // Assuming the end time is submitted via a form
-   
-   // Generate the array of numbers
-   $numbers = range($startTime, $endTime);
-   
-   // Insert the numbers into the database
-//    foreach ($numbers as $number) {
-//      $query = "INSERT INTO availabletime (slotStart) VALUES ('$number')";
-//      mysqli_query($conn, $query);
-//    }
 
-    if(!empty($_POST['days'])){
-        foreach($_POST['days']as $selectedd){
+if (isset($_POST['submit'])) {
+    $days = implode("','", $_POST['days']); // Convert array to a comma-separated string
+    $queryDelete = "DELETE FROM availabletime";
+   // echo "DELETE query: $queryDelete"; // Add this line for debugging
+    mysqli_query($conn, $queryDelete);
+
+    $startTime = $_POST["starttime"];
+    $endTime = $_POST["endtime"];
+
+    $numbers = range($startTime, ($endTime - 1));
+
+    if (!empty($_POST['days'])) {
+        foreach ($_POST['days'] as $selectedd) {
             foreach ($numbers as $number) {
-            if ($selectedd=="sun"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime,slotStart) VALUES ('Sunday', '$startTime', '$endTime,'$number')");
-//echo $selectedd;
-            }
-             if ($selectedd=="mon"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
-
-            }
-             if ($selectedd=="tues"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
-
-            }
-             if ($selectedd=="wends"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
-
-            }
-             if ($selectedd=="thurs"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Thursday', '$startTime', '$endTime')");
-
-            }
-             if ($selectedd=="fri"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Friday', '$startTime', '$endTime')");
-
-            } if ($selectedd=="satur"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Saturday', '$startTime', '$endTime')");
-
+                if ($selectedd == "sun") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Sunday', '$startTime', '$endTime', '$number')");
+                } elseif ($selectedd == "mon") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "tues") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "wends") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "thurs") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Thursday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "fri") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Friday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "satur") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Saturday', '$startTime', '$endTime')");
+                }
             }
         }
     }
-}
-    
+
     // Assuming the insertion is successful
-    echo "Numbers inserted successfully into the database!";
-
-
-
-
+    echo "Set successfully";
 
     $conn->close();
 }
+
 
 
 ?>
