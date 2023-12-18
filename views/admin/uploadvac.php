@@ -63,9 +63,19 @@ if(isset($_POST["submit"])){
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet"
+		href="../../public/css/admin-main.css">
+	<link rel="stylesheet"
+		href="../../public/css/admin-res.css">
 </head>
 <body>
-<?php include '../partials/admin-header.php';?>
+<header>
+
+	<?php include '../partials/admin-header.php';?>
+
+
+	</header>
+
      
     <section id="upload_container">
         <form action="upload.php" method="POST" enctype="multipart/form-data" >
