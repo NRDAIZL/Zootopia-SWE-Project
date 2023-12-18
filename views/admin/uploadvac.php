@@ -65,9 +65,7 @@ if(isset($_POST["submit"])){
     <link rel="stylesheet" href="upload.css">
 </head>
 <body>
-    <?php
-    include_once 'header.php';
-    ?>
+<?php include '../partials/admin-header.php';?>
      
     <section id="upload_container">
         <form action="upload.php" method="POST" enctype="multipart/form-data" >
