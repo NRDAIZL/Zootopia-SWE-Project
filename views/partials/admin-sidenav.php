@@ -20,7 +20,7 @@
 
 					<div class="option2 nav-option">
 						
-					<a href="../admin/availability.php"> Availability</a>
+					<a href="../admin/availability.php">Availability</a>
 					</div>
 
 					<div class="nav-option option3">

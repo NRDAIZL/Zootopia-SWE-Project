@@ -14,6 +14,7 @@
 	<link rel="stylesheet"
 		href="../../public/css/admin-res.css">
         <script src="../../public/javascript/admin.js"></script>
+        <script src="../../public/javascript/availability.js"></script>
 
 </head>
 
@@ -90,49 +91,72 @@
   </form>
 
 <!-- //////////////////////////////// -->
+
+
+<!-- ?php
+
+$date = "22-02-2021 14:22:22";
+$newDate = date("d-m-Y H:i:s", strtotime($date.' +1 hour'));
+
+? -->
+
+
+
+
+<!-- //////////////////////// -->
+
+
+
+
+
+
+
+
 <?php
 
 // Include database connection
 include_once "../../config/dbh.inc.php";
 
-if (isset($_POST['submit'])){
-     $startTime = $_POST["starttime"];
-   $endTime = $_POST["endtime"];
 
-    if(!empty($_POST['days'])){
-        foreach($_POST['days']as $selectedd){
-           
-            if ($selectedd=="sun"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Sunday', '$startTime', '$endTime')");
-//echo $selectedd;
-            }
-             if ($selectedd=="mon"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
+if (isset($_POST['submit'])) {
+    $days = implode("','", $_POST['days']); // Convert array to a comma-separated string
+    $queryDelete = "DELETE FROM availabletime";
+   // echo "DELETE query: $queryDelete"; // Add this line for debugging
+    mysqli_query($conn, $queryDelete);
 
-            }
-             if ($selectedd=="tues"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
+    $startTime = $_POST["starttime"];
+    $endTime = $_POST["endtime"];
 
-            }
-             if ($selectedd=="wends"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
+    $numbers = range($startTime, ($endTime - 1));
 
-            }
-             if ($selectedd=="thurs"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Thursday', '$startTime', '$endTime')");
-
-            }
-             if ($selectedd=="fri"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Friday', '$startTime', '$endTime')");
-
-            } if ($selectedd=="satur"){
-                 mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Saturday', '$startTime', '$endTime')");
-
+    if (!empty($_POST['days'])) {
+        foreach ($_POST['days'] as $selectedd) {
+            foreach ($numbers as $number) {
+                if ($selectedd == "sun") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Sunday', '$startTime', '$endTime', '$number')");
+                } elseif ($selectedd == "mon") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "tues") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "wends") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "thurs") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Thursday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "fri") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Friday', '$startTime', '$endTime')");
+                } elseif ($selectedd == "satur") {
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Saturday', '$startTime', '$endTime')");
+                }
             }
         }
     }
+
+    // Assuming the insertion is successful
+    echo "Set successfully";
+
     $conn->close();
 }
+
 
 
 ?>
@@ -149,3 +173,24 @@ if (isset($_POST['submit'])){
 	
 </body>
 </html>
+
+<!-- IF (
+    SELECT COUNT(*)                -- resources/courts reserved
+        FROM reservation
+        WHERE club_code = $club_code
+        AND   date_time = $date_time
+    ) = 0
+THEN PRINT "All courts available"
+ELSE IF (
+        SELECT COUNT(*)            -- resources/courts that exist
+            FROM club_resource_slot
+            WHERE club_code = $club_code
+            AND   date_time = $date_time
+        ) = (
+        SELECT COUNT(*)            -- resources/courts reserved
+            FROM reservation
+            WHERE club_code = $club_code
+            AND   date_time = $date_time
+        )
+    THEN PRINT "All courts reserved"
+    ELSE PRINT "Some courts available" -->
