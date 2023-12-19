@@ -30,11 +30,15 @@ else{
 	
     
 
-    echo"First time? " , "<a href='SignUp.php'>Signup Here.</a>" ;
+   echo "<label>First time ?</label>";
+        echo"<a href='SignUp.php'>";
+    echo "<button>Signup Here.</button>";
 
 	
-    
-    echo"  Already a customer? " , "<a href='Login.php'>Login.</a>", "<hr>";
+    echo "<label>Already a customer ?</label>";
+        echo"<a href='Login.php'>";
+    echo "<button>Login.</button>";
+    // echo"  Already a customer? " , "<a href='Login.php'>Login.</a>", "<hr>";
 	
 }
 ?>
