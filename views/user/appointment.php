@@ -11,6 +11,7 @@
   <script src="../../public/javascript/appointment.js"></script>
   <link rel="stylesheet" href="../../public/css/calendar.css">
   <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
   <script src="../../public/javascript/calendar.js"></script>
   <script src="../../public/javascript/getpet.js"></script>
 
@@ -30,30 +31,10 @@
         <br><br>
 
         <div id="petTypeError" class="error-message"></div>
-        
-
-    
         <br><br>
-   
-
+  
     <label for="petName">Pet Name:</label>
       <select id="petName" name="petName" required>
-<?php
-$ownerID = $_SESSION['ID'];
-
-// Fetch pet names based on the owner ID
-$sql = "SELECT pet_id, pet_name FROM pets WHERE owner_id = '$ownerID'";
-$result = $conn->query($sql);
-
-if ($result->num_rows > 0) {
-    while ($row = $result->fetch_assoc()) {
-        echo "<option value='" . $row['pet_name'] . "' data-petid='" . $row['pet_id'] . "'>" . $row['pet_name'] . "</option>";
-    }
-} else {
-    echo "<option value=''>No pets found</option>";
-}
-?>
-
 
 </select>
 <!-- Add a hidden input field for petId -->
@@ -64,7 +45,6 @@ if ($result->num_rows > 0) {
     <input type="date" id="apday" name= "datepicker-check-in" placeholder="Check-in date">
     
 
-</select>
 <div id="apDayError" class="error-message"></div>
 
       <br><br>
@@ -89,22 +69,17 @@ if ($result->num_rows > 0) {
 // Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
-    $pettype1 = mysqli_real_escape_string($conn, $_POST['pettype']);
-    $petname1 = mysqli_real_escape_string($conn, $_POST['petname']);
-    $apday11 = mysqli_real_escape_string($conn, $_POST['apday']);
-    $aptime11 = mysqli_real_escape_string($conn, $_POST['aptime']);
-   
+    $appday = mysqli_real_escape_string($conn, $_POST['datepicker-check-in']);
+    $apptime = mysqli_real_escape_string($conn, $_POST['aptime']);
+    $petId = mysqli_real_escape_string($conn, $_POST['petId']);
+
 
     // Create an SQL query to insert the data
-    $sql = "INSERT INTO appointments (pettype	,petname	,appointmentday	,appointmenttime)
-            VALUES ('$pettype1', '$petname1', '$apday11', '$aptime11')";
+    $sql = "INSERT INTO appointments (client_id, pet_id	,appointmentday	,appointmenttime)
+            VALUES ( '" . $_SESSION['ID'] . "','$petId','$appday', '$apptime')";
 
 
-if (empty($pettype1)) {
-  //echo "plz select the pet type.<br>";
-  //return false;
 
-}
 
     // Perform the query
     try {
@@ -127,7 +102,6 @@ if (empty($pettype1)) {
 
 ?>
 
-</div>
   
 </body>
 

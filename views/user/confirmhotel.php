@@ -79,7 +79,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $checkInDate = mysqli_real_escape_string($conn, $_POST['datepicker-check-in']);
     $checkOutDate = isset($_POST['datepicker-check-out']) ? mysqli_real_escape_string($conn, $_POST['datepicker-check-out']) : null;
 
-    // If the booking type is daytime, then the check-out date is not required
+    // If the boo   king type is daytime, then the check-out date is not required
     if ($bookingType === 'daycare') {
         $checkOutDate = $checkInDate;
         $totalPrice =$dayCarePrice;
