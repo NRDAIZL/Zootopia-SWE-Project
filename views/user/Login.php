@@ -41,8 +41,8 @@
 	$result = mysqli_query($conn,$sql);
     if($row=mysqli_fetch_array($result))	{ //fetching the user data
 		$_SESSION["ID"]=$row[0];
-		$_SESSION["FirstName"]=$row["FirstName"];
-		$_SESSION["LastName"]=$row["LastName"];
+		$_SESSION["Fname"]=$row["Fname"];
+		$_SESSION["Lname"]=$row["Lname"];
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
 		// var_dump($_SESSION);
