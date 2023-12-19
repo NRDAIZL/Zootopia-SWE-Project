@@ -39,8 +39,7 @@ if(isset($_POST["submit"])){
   }else{
       if($vaccinename != "" && $price !=""&&$vaccine_description!=""){
          
-        
-          
+        move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
 
           $sql = "INSERT INTO vaccines(vaccine_name,VaccineDescription,vaccine_image,price)
           VALUES('$vaccinename',$vaccine_description,'$vaccine_image',$price)";

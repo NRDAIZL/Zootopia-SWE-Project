@@ -42,6 +42,10 @@
 						
 					<a href="../admin/pethotel.php"> Hotel</a>
 					</div>
+					<div class="nav-option option3">
+					
+					<a href="../admin/vaccine.php"></a>
+					</div>
 
 					<div class="nav-option logout">
 						
