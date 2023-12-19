@@ -18,28 +18,7 @@ if(!empty($_SESSION['ID'])) {
 	echo "<h1>Welcome ".$_SESSION['Fname']."</h1>";
     echo"<a href='Logout.php'>SignOut Here</a>";
 
-  
-
-	
-}
-
-else{
-    var_dump($_SESSION);
-
-	echo "<h1>Welcome To Zootopia!</h1>";
-	
-    
-
-    echo"First time? " , "<a href='SignUp.php'>Signup Here.</a>" ;
-
-	
-    
-    echo"  Already a customer? " , "<a href='Login.php'>Login.</a>", "<hr>";
-	
-}
-?>
-
-<div id="image_row1">
+    echo '<div id="image_row1"> 
     <table id="TableContents">
         <th>
             <a href="services.php"> 
