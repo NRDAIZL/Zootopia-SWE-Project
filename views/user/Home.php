@@ -19,12 +19,13 @@ if(!empty($_SESSION['ID'])) {
     echo"<a href='Logout.php'>SignOut Here</a>";
 
   
+    
 
 	
 }
 
 else{
-    var_dump($_SESSION);
+    // var_dump($_SESSION);
 
 	echo "<h1>Welcome To Zootopia!</h1>";
 	
