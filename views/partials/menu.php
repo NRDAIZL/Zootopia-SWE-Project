@@ -15,12 +15,12 @@
         <img src="../../public/images/logo.png" class="logo" alt="the clinic logo"></img>
     
         <ul id="myElement" onclick="toggleHover()">
-
-            <li><a class="ho" href="../../views/user/home.php">Home</a></li>
-            <!-- <li><a class="ho" href="../../views/user/appointment.php">Book an appointment</a></li> -->
-            <li><a class="ho" href="../../views/user/services.php">Services</a></li>
-            <li><a class="ho" href="../../views/user/viewprofile.php">Profile</a></li>
             <?php if(!empty($_SESSION['ID'])) {
+           echo ' <li><a class="ho" href="../../views/user/home.php">Home</a></li>';
+           echo ' <!-- <li><a class="ho" href="../../views/user/appointment.php">Book an appointment</a></li> -->';
+            echo '<li><a class="ho" href="../../views/user/services.php">Services</a></li>';
+            echo '<li><a class="ho" href="../../views/user/viewprofile.php">Profile</a></li>';
+
              echo '  <li><a class="ho" href="../../views/user/Logout.php">Logout</a></li>';
 
 

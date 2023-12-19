@@ -15,7 +15,7 @@
 //Checking if a user logged in or not.
 
 if(!empty($_SESSION['ID'])) {
-	echo "<h1>Welcome ".$_SESSION['FirstName']."</h1>";
+	echo "<h1>Welcome ".$_SESSION['Fname']."</h1>";
     echo"<a href='Logout.php'>SignOut Here</a>";
 
     echo '<div id="image_row1"> 
@@ -45,7 +45,7 @@ if(!empty($_SESSION['ID'])) {
     </table>
 </div>';
 }
-
+    
 else{
     // var_dump($_SESSION);
 
