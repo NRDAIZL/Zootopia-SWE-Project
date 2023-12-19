@@ -39,7 +39,7 @@ if(isset($_POST["submit"])){
   }else{
       if($vaccinename != "" && $price !=""&&$vaccine_description!=""){
          
-        move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
+        
           
 
           $sql = "INSERT INTO vaccines(vaccine_name,price,VaccineDescription,vaccine_image)
@@ -89,7 +89,7 @@ if(isset($_POST["submit"])){
      
     <section id="upload_container">
         <form action="uploadvac.php" method="POST" enctype="multipart/form-data" >
-            <input type="text" name="vaccinename" id="VaccineName" placeholder="vaccine Name" required>
+            <input type="text" name="vaccinename" id="vaccinename" placeholder="vaccine Name" required>
             <input type="number" name="price" id="price" placeholder="vaccine Price" required>
             <input type="text" name="vaccine-description" id="vaccine_description" placeholder="vaccine description">
             <input type="file" name="imageUpload" id="imageUpload" required hidden>
