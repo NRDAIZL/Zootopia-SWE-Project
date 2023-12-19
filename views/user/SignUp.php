@@ -36,6 +36,13 @@
               <span></span>
               <label>Password</label>
             </div>
+            <!-- //////////////// -->
+            <div class="txt_field">
+              <input type="Phone" name="Phone" required>
+              <span></span>
+              <label>Phone number</label>
+            </div>
+            <!-- ////////// -->
               <input type="submit" value="Submit" name="Submit">
             <div class="signup_link">
               <p>Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
@@ -50,7 +57,7 @@
     $Lname=htmlspecialchars($_POST["LastName"]);
     $Email=htmlspecialchars($_POST["Email"]);
     $Password=htmlspecialchars($_POST["Password"]);
-    
+    $phone=htmlspecialchars($_POST["Phone"]);
 
       //insert it to database 
 
