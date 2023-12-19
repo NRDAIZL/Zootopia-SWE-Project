@@ -42,8 +42,8 @@ if(isset($_POST["submit"])){
         
           
 
-          $sql = "INSERT INTO vaccines(vaccine_name,price,VaccineDescription,vaccine_image)
-          VALUES('$vaccinename',$price,$vaccine_description,'$vaccine_image')";
+          $sql = "INSERT INTO vaccines(vaccine_name,VaccineDescription,vaccine_image,price)
+          VALUES('$vaccinename',$vaccine_description,'$vaccine_image',$price)";
             
 
           if($conn->query($sql) == TRUE){
