@@ -19,10 +19,7 @@
     <title>vaccination</title>
 </head>
 <body>
-    <?php
-
-    include_once 'header.php';
-    ?>
+    
 
    <main>
        <?php

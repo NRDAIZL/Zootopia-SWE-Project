@@ -42,10 +42,20 @@ if(isset($_POST["submit"])){
 
           $sql = "INSERT INTO vaccines(vaccine_name,price,VaccineDescription,vaccine_image)
           VALUES('$vaccinename',$price,$vaccine_description,'$vaccine_image')";
+            
 
           if($conn->query($sql) === TRUE){
               echo "<script>alert('your vaccine uploaded successfully')</script>";
+              
           }
+          else { try {
+            mysqli_query($conn, $sql);
+            echo "Vaccine successfully added to the database.";
+        } catch (Exception $e) {
+            echo "Error: " . $e->getMessage();
+        } finally {
+            mysqli_close($conn);
+        }}
       }
   }
 
@@ -64,19 +74,19 @@ if(isset($_POST["submit"])){
     <title>Document</title>
     <link rel="stylesheet" href="upload.css">
    
-    
+
 </head>
 <body>
 <header>
 
-	<?php include '../partials/admin-header.php';?>
+	
 
 
 	</header>
 
      
     <section id="upload_container">
-        <form action="upload.php" method="POST" enctype="multipart/form-data" >
+        <form action="uploadvac.php" method="POST" enctype="multipart/form-data" >
             <input type="text" name="vaccinename" id="VaccineName" placeholder="vaccine Name" required>
             <input type="number" name="price" id="price" placeholder="vaccine Price" required>
             <input type="number" name="discount" id="vaccine_description" placeholder="vaccine description">
