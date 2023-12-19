@@ -45,6 +45,7 @@
 		$_SESSION["Lname"]=$row["Lname"];
 		$_SESSION["Email"]=$row["Email"];
 		$_SESSION["Password"]=$row["Password"];
+    $_SESSION["role"]=$row["role"];
 		// var_dump($_SESSION);
 		header("Location:Home.php");
 
