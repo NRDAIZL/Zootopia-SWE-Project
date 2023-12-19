@@ -35,6 +35,13 @@
               <span></span>
               <label>Password</label>
             </div>
+            <!-- //////////////// -->
+            <div class="txt_field">
+              <input type="Phone" name="Phone" required>
+              <span></span>
+              <label>Phone number</label>
+            </div>
+            <!-- ////////// -->
               <input type="submit" value="Submit" name="Submit">
             <div class="signup_link">
               <p>Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
@@ -49,7 +56,7 @@
     $Lname=htmlspecialchars($_POST["LastName"]);
     $Email=htmlspecialchars($_POST["Email"]);
     $Password=htmlspecialchars($_POST["Password"]);
-    
+    $phone=htmlspecialchars($_POST["Phone"]);
 
       //insert it to database 
 
@@ -63,8 +70,8 @@
       echo "Password should be 7 characters or more.";
     }
     else{
-      $sql = "INSERT INTO users(Fname,Lname,Email,Password)
-      values('$Fname','$Lname','$Email','$Password')";
+      $sql = "INSERT INTO users(Fname,Lname,Email,Password,Phone)
+      values('$Fname','$Lname','$Email','$Password','$phone')";
 
       $result=mysqli_query($conn,$sql);
     
