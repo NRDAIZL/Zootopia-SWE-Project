@@ -6,6 +6,7 @@
   <html>
     <head>
       <title>Sign Up</title>
+      <script src="eventHandler.js"></script>
       <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
     </head>
 
@@ -56,14 +57,14 @@
     if(strlen($Fname)< 3){ //Validated Name
       echo "Name too short, please enter a suitable name.";
     }
-    elseif(str_contains($Email, "@gmail.com") or str_contains($Email, "@hotmail.com") or str_contains($Email, "@outlook.com")){ //Validate Email
+    elseif(true===false){ //Validate Email
       echo "Please enter valid Email.";
     }
     elseif(strlen($Password)<6){ //Validate Password
       echo "Password should be 7 characters or more.";
     }
     else{
-      $sql = "INSERT INTO users(Fname,Lname,Email,Password)
+      $sql = "INSERT INTO users(FirstName,LastName,Email,Password)
       values('$Fname','$Lname','$Email','$Password')";
 
       $result=mysqli_query($conn,$sql);
@@ -80,8 +81,8 @@ $result = mysqli_query($conn, $sql);
 
 if ($row = mysqli_fetch_assoc($result)) {
     $_SESSION["ID"] = $row["ID"];
-    $_SESSION["Fname"] = $row["Fname"];
-    $_SESSION["Lname"] = $row["Lname"];
+    $_SESSION["FirstName"] = $row["FirstName"];
+    $_SESSION["LastName"] = $row["LastName"];
     $_SESSION["Email"] = $row["Email"];
     $_SESSION["Password"] = $row["Password"];
     
