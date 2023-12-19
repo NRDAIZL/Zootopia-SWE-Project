@@ -1,3 +1,13 @@
+<?php session_start(); 
+ if (empty($_SESSION['ID'])) {
+    header("../../views/user/Login.php");
+ }
+?>
+  <?php
+    include_once "../../config/dbh.inc.php";
+   
+  ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,7 +120,7 @@ button {
             <div class="im1">
         <img class="zpimg" src="../../public/images/istockphoto-1300845620-612x612.jpg">
         <ul>
-        <li>Ahmed Mohamed</li>
+        <li><?php echo $_SESSION["Fname"]," ", $_SESSION["Lname"];?></li>
         <button type="button">Back</button>
         </ul>
             </div>
@@ -121,39 +131,27 @@ button {
    <div class="in1">
    <div class="info1">
              <h3>Full Name</h3>
-   <label> Ahmed Mohamed</label>
+   <label><?php echo $_SESSION["Fname"]," ", $_SESSION["Lname"];?></label>
    </div>
    <br>
-   <div class="info2">
-           <h3>User Name</h3>
-           <label>ahmed3459</label>
-   </div>
    <br>
    <div class="info3">
    <h3>Email</h3>
-           <label>ahmed@gmail.com</label>
+           <label><?php echo $_SESSION["Email"];?></label>
    </div>
    <br>
-   
-    <div class="info4">
-    <h3>Gender</h3>
-           <label>male</label>
-    </div>
-   </div>
     <div class="in2">
     <div class="info5">
     <h3>Phone Number</h3>
-           <label>01175848488</label>
+           <label><?php echo $_SESSION["phone"];?></label>
     </div>
     <br>
 <div class="info6">
-    <h3>Address</Address></h3>
-           <label>Nasr city</label>
+           
 </div>
 <br>
 <div class="info7">
-    <h3>Birth Date</h3>
-           <label>1/5/2003</label>
+   
 </div>
 
     </div>
