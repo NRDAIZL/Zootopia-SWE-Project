@@ -69,7 +69,7 @@
 // Grab data from user if form was submitted
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     // Get data from the form
-    $appday = mysqli_real_escape_string($conn, $_POST['apday']);
+    $appday = mysqli_real_escape_string($conn, $_POST['datepicker-check-in']);
     $apptime = mysqli_real_escape_string($conn, $_POST['aptime']);
     $petId = mysqli_real_escape_string($conn, $_POST['petId']);
 
