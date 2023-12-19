@@ -5,7 +5,7 @@ require_once '../../config/dbh.inc.php';
 if(isset($_POST["submit"])){
   $vaccinename = $_POST["vaccinename"];
   $price = $_POST["price"];
-  $vaccine_description = $_POST["vaccine_description"];
+  $vaccine_description = $_POST["vaccine-description"];
 
   //For uploads photos
   $upload_dir = "uploads/"; //this is where the uploaded photo stored
@@ -72,7 +72,7 @@ if(isset($_POST["submit"])){
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="upload.css">
+    <link rel="stylesheet" href="../../public/css/upload.css">
    
 
 </head>
@@ -89,7 +89,7 @@ if(isset($_POST["submit"])){
         <form action="uploadvac.php" method="POST" enctype="multipart/form-data" >
             <input type="text" name="vaccinename" id="VaccineName" placeholder="vaccine Name" required>
             <input type="number" name="price" id="price" placeholder="vaccine Price" required>
-            <input type="number" name="discount" id="vaccine_description" placeholder="vaccine description">
+            <input type="text" name="vaccine-description" id="vaccine_description" placeholder="vaccine description">
             <input type="file" name="imageUpload" id="imageUpload" required hidden>
             <button id="choose" onclick="upload();">Choose Image</button>
             <input type="submit" value="Upload" name="submit">
