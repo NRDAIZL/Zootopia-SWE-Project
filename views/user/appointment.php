@@ -4,98 +4,65 @@
   <meta charset="UTF-8">
   <title>book an appointment</title>
   <?php
+  session_start();
+
   include_once "../../config/dbh.inc.php";
 ?>
   <script src="../../public/javascript/appointment.js"></script>
   <link rel="stylesheet" href="../../public/css/calendar.css">
   <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
   <script src="../../public/javascript/calendar.js"></script>
- 
-  
+  <script src="../../public/javascript/getpet.js"></script>
+
+  <style>
+    .container{
+      background-color:black;
+    }
+  </style>
 </head>
 <body>
-<script src="../../public/javascript/calendar.js"></script>
 <?php include '../partials/menu.php';?>
-<!-- ?php include '../partials/footer.php';?> -->
-    <!-- <p>The select element is used to create a drop-down list.</p> -->
-    
-    <!-- <form action="/action_page.php"> -->
-<!-- ///////////////////// -->
+
 <div class="container">
-    <!-- onsubmit="return apvalidateForm()" -->
     <div class="center">
      <form  action="" onsubmit="return apvalidateForm()" method="post">
-    <!-- <div class="row"> -->
-      <!-- <div class="col-25"> -->
-        <br><br>
-        <label for="pettype" class="choose">Pet type:</label>
-      <!-- </div> -->
-      <!-- <div class="col-75"> -->
-        <select id="pettypeid" class="selectt" name="pettype" class="pettypee"  required>
-        
-        <div class="optionn">
 
-        <option value="0">select pet</option>
-          <option value="dog">Dog</option>
-          <option value="cat">Cat</option>
-          <option value="rabbit">Rabbit</option>
-          <option value="fish">Fish</option>
-          <option value="bird">Bird</option>
-          <option value="turtle">Turtle</option>
-          <option value="horse">Horse</option>
-          <option value="hamster">Hamster</option>
-          <option value="reptile">Reptile</option>
-          <option value="other">Other</option>
-        </div>
-        </select>
+        <br><br>
+
         <div id="petTypeError" class="error-message"></div>
         
 
-      <!-- </div> -->
-    <!-- </div> -->
-
-    <!-- <div class="row">
-      <div class="col-25"> -->
+    
         <br><br>
-        <label for="petname" class="choose">Pet Name:</label>
-      <!-- </div> -->
-      <!-- <div class="col-75"> -->
-        <input type="text" id="petnameid" name="petname" placeholder="Your pet name ;) " class="optionn" >
-      <!-- </div> -->
-    <!-- </div> -->
+   
 
+    <label for="petName">Pet Name:</label>
+      <select id="petName" name="petName" required>
+<?php
+$ownerID = $_SESSION['ID'];
 
-
-
-
-
-      
-      <!-- ?php
-//display avaliable days and times from database in dropdown lists
-$query = 'SELECT days FROM availabletime';
-$result = $conn->query($query);
+// Fetch pet names based on the owner ID
+$sql = "SELECT pet_id, pet_name FROM pets WHERE owner_id = '$ownerID'";
+$result = $conn->query($sql);
 
 if ($result->num_rows > 0) {
-    // Fetch rows and store them in an array
-    $rows = $result->fetch_all(MYSQLI_ASSOC);
-} else {
-    echo 'No empty place.';
-}
-?> -->
-
-      <br><br>
-      <label for="datepicker-check-in" class="choose">Choose a day:</label>
-     
-<!-- <select class="selectt" name="apday" id="apday" onchange="updateaptime()">
-    <option value="">Select day</option> -->
-    <!-- //// -->
-    <input type="text" id="apday" name= "datepicker-check-in" placeholder="Check-in date">
-    <!-- < ?php
-    foreach ($rows as $row) {
-        $day = $row['days'];
-        echo "<option value=\"$day\">$day</option>";
+    while ($row = $result->fetch_assoc()) {
+        echo "<option value='" . $row['pet_name'] . "' data-petid='" . $row['pet_id'] . "'>" . $row['pet_name'] . "</option>";
     }
-    ?> -->
+} else {
+    echo "<option value=''>No pets found</option>";
+}
+?>
+
+
+</select>
+<!-- Add a hidden input field for petId -->
+      <input type="hidden" id="petId" name="petId">
+   <br><br>
+      <label for="datepicker-check-in" class="choose">Choose a day:</label>
+
+    <input type="date" id="apday" name= "datepicker-check-in" placeholder="Check-in date">
+    
 
 </select>
 <div id="apDayError" class="error-message"></div>
@@ -106,15 +73,11 @@ if ($result->num_rows > 0) {
         <option class="optionn" value="0">select time</option>
         
       </select>
-      <div id="apTimeError" class="error-message"></div>
+      <div id="apTimeError" class="errx or-message"></div>
       <br><br>
-      <!-- <a href="Home.php"> -->
         <input type="submit" class="apbtn" id="apbtn" value="submit">
-        <!-- <button class="apbtn" id="apbtn" type="submit"> Submit </button> -->
-    <!-- </a> -->
-      <!-- Inside the body of your HTML -->
-      
-      <!-- <div id="errorMessage" class="error-message-container"></div> -->
+    
+
     
   </form>
   </div>
