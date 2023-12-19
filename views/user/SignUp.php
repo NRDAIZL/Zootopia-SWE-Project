@@ -6,6 +6,7 @@
   <html>
     <head>
       <title>Sign Up</title>
+      <script src="eventHandler.js"></script>
       <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
     </head>
 
@@ -72,8 +73,8 @@
       echo "Password should be 7 characters or more.";
     }
     else{
-      $sql = "INSERT INTO users(Fname,Lname,Email,Password,Phone)
-      values('$Fname','$Lname','$Email','$Password','$phone')";
+      $sql = "INSERT INTO users(FirstName,LastName,Email,Password)
+      values('$Fname','$Lname','$Email','$Password')";
 
       $result=mysqli_query($conn,$sql);
     
