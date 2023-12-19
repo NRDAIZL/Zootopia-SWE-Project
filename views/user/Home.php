@@ -65,8 +65,6 @@ else{
         </th>
     </table>
 </div>';
-
-	
 }
 
 else{
