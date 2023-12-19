@@ -38,13 +38,15 @@ if(isset($_POST["submit"])){
      echo '<script>alert("sorry your file is doesn\'t uploaded. Please try again")</script>';
   }else{
       if($vaccinename != "" && $price !=""&&$vaccine_description!=""){
-          move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
+         
+        move_uploaded_file($_FILES["imageUpload"]["tmp_name"],$upload_file);
+          
 
           $sql = "INSERT INTO vaccines(vaccine_name,price,VaccineDescription,vaccine_image)
           VALUES('$vaccinename',$price,$vaccine_description,'$vaccine_image')";
             
 
-          if($conn->query($sql) === TRUE){
+          if($conn->query($sql) == TRUE){
               echo "<script>alert('your vaccine uploaded successfully')</script>";
               
           }
