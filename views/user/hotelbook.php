@@ -1,4 +1,6 @@
 <?php
+session_start();
+
   include_once "../../config/dbh.inc.php";
 ?>
 <!DOCTYPE html>
@@ -7,74 +9,24 @@
 <head>
     <title>Pet Hotel Booking Form</title>
     <link rel="stylesheet" href="../../public/css/calendar.css">
+    <link rel="stylesheet" href="../../public/css/hotel.css">
     <script src="../../public/javascript/hotel.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.13.2/jquery-ui.min.js"></script>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="../../public/javascript/calendar.js"></script>
+    <script src="../../public/javascript/getpet.js"></script>
+
 
     <style>
-        .booking-form {
-            width: 500px;
-            margin: 0 auto;
-        }
-        
-        .booking-form input {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-        }
-        
-        .booking-form button {
-            width: 100%;
-            padding: 10px;
-            margin-bottom: 10px;
-            background-color: #000;
-            color: #fff;
-            cursor: pointer;
-        }
-        
-        #number-of-nights-display {
-            font-size: 16px;
-            font-weight: bold;
-        }
     </style>
-    <script>
-       $(document).ready(function () {
-        $(document).ready(function () {
-    function loadPetNames() {
-        // Make an AJAX request to fetch pet names based on the owner ID
-        $.ajax({
-            type: "GET",
-            url: "get_pet_names.php", // Create a new PHP file to handle this AJAX request
-            success: function (data) {
-                $("#petName").html(data);
-            // Set the petId to the value of the only option
-            $("#petName option:selected").data("petid");
-            $("#petId").val($("#petName option:selected").data("petid"));
-
-            }
-        });
-    }
-
-    loadPetNames(); // Load initial pet names on page load
-});
-
-    // Set the corresponding petId when petName is selected
-    $("#petName").change(function () {
-        var selectedPetId = $("#petName option:selected").data("petid");
-        $("#petId").val(selectedPetId);
-    });
-
-});
-
-    </script>
 </head>
 
 <body>
-<script src="../../public/javascript/calendar.js"></script>
 
-<?php include '../partials/menu.php';
-session_start();
+<?php 
+include '../partials/menu.php';
+
 ?>
 
     <div class="booking-form">
