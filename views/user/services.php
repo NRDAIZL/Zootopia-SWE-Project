@@ -24,7 +24,7 @@
       body{
         width: 100vw;
         height: 100vh;
-        background:#c8e8e0 ;
+        background:white ;
         padding-top: 50 px;
 
       }
@@ -34,7 +34,7 @@
          font-weight: 400;
         }
         h1{
-          color:#be5e5e;
+          color:#dc2020;
           font-size: 45px;
           margin-top: 10px;
 
@@ -80,7 +80,7 @@
         .box .btn{
           width:150px;
           border:none;
-          background-color:#be5e5e;
+          background-color:#dc2020;
           font-size: 17px;
           cursor:pointer;
           font-weight: bold;
@@ -109,7 +109,7 @@
     <body>
     <?php include '../partials/menu.php';?>
   
-<h1>Our Services.</h1>
+<h1>Our Services</h1>
    <div class="row">
       <div class="box">
 <img src="../../public/images/img.02.png">
