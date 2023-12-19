@@ -7,12 +7,14 @@
   include_once "../../config/dbh.inc.php";
 ?>
   <script src="../../public/javascript/appointment.js"></script>
+  <link rel="stylesheet" href="../../public/css/calendar.css">
   <link rel="stylesheet" href="../../public/css/appointment.css?v=<?php echo time(); ?>">
+  <script src="../../public/javascript/calendar.js"></script>
  
   
 </head>
 <body>
-  
+<script src="../../public/javascript/calendar.js"></script>
 <?php include '../partials/menu.php';?>
 <!-- ?php include '../partials/footer.php';?> -->
     <!-- <p>The select element is used to create a drop-down list.</p> -->
@@ -21,6 +23,7 @@
 <!-- ///////////////////// -->
 <div class="container">
     <!-- onsubmit="return apvalidateForm()" -->
+    <div class="center">
      <form  action="" onsubmit="return apvalidateForm()" method="post">
     <!-- <div class="row"> -->
       <!-- <div class="col-25"> -->
@@ -67,7 +70,7 @@
 
 
       
-      <?php
+      <!-- ?php
 //display avaliable days and times from database in dropdown lists
 $query = 'SELECT days FROM availabletime';
 $result = $conn->query($query);
@@ -76,20 +79,24 @@ if ($result->num_rows > 0) {
     // Fetch rows and store them in an array
     $rows = $result->fetch_all(MYSQLI_ASSOC);
 } else {
-    echo 'No data found.';
+    echo 'No empty place.';
 }
-?>
+?> -->
+
       <br><br>
-      <label for="apday" class="choose">Choose a day:</label>
+      <label for="datepicker-check-in" class="choose">Choose a day:</label>
      
-<select class="selectt" name="apday" id="apday" onchange="updateaptime()">
-    <option value="">Select day</option>
-    <?php
+<!-- <select class="selectt" name="apday" id="apday" onchange="updateaptime()">
+    <option value="">Select day</option> -->
+    <!-- //// -->
+    <input type="text" id="apday" name= "datepicker-check-in" placeholder="Check-in date">
+    <!-- < ?php
     foreach ($rows as $row) {
         $day = $row['days'];
         echo "<option value=\"$day\">$day</option>";
     }
-    ?>
+    ?> -->
+
 </select>
 <div id="apDayError" class="error-message"></div>
 
@@ -110,6 +117,7 @@ if ($result->num_rows > 0) {
       <!-- <div id="errorMessage" class="error-message-container"></div> -->
     
   </form>
+  </div>
 <!-- ////////////////////////// -->
 <?php
 
@@ -129,10 +137,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             VALUES ('$pettype1', '$petname1', '$apday11', '$aptime11')";
 
 
-// if (empty($pettype1)) {
-//   echo "plz select the pet type.<br>";
-//   return false;
-// }
+if (empty($pettype1)) {
+  //echo "plz select the pet type.<br>";
+  //return false;
+
+}
 
     // Perform the query
     try {

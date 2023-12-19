@@ -57,9 +57,11 @@
     if(strlen($Fname)< 3){ //Validated Name
       echo "Name too short, please enter a suitable name.";
     }
-    elseif(true===false){ //Validate Email
+    elseif(strpos($Email, "@gmail.com") === false && strpos($Email, "@hotmail.com") === false && strpos($Email, "@outlook.com") === false){ //Validate Email
       echo "Please enter valid Email.";
     }
+    
+    
     elseif(strlen($Password)<6){ //Validate Password
       echo "Password should be 7 characters or more.";
     }

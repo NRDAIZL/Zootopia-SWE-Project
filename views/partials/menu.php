@@ -17,10 +17,18 @@
         <ul id="myElement" onclick="toggleHover()">
 
             <li><a class="ho" href="../../views/user/home.php">Home</a></li>
-            <li><a class="ho" href="../../views/user/signup.php">Registration</a></li>
-            <li><a class="ho" href="../../views/user/appointment.php">Book an appointment</a></li>
+            <!-- <li><a class="ho" href="../../views/user/appointment.php">Book an appointment</a></li> -->
             <li><a class="ho" href="../../views/user/services.php">Services</a></li>
             <li><a class="ho" href="../../views/user/viewprofile.php">Profile</a></li>
+            <?php if(!empty($_SESSION['ID'])) {
+             echo '  <li><a class="ho" href="../../views/user/Logout.php">Logout</a></li>';
+
+
+            }else{
+                          echo '  <li><a class="ho" href="../../views/user/Login.php">Sign in</a></li>';
+
+            }
+?>
         </ul>
         <label id="icon">
            <i class="fas fa-bars"></i> 
