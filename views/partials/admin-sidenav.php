@@ -10,11 +10,11 @@
 
 <nav class="nav">
 				<div class="nav-upper-options">
-					<div class="nav-option option1">
-						<!-- <img src=
+					<div class="nav-option option3">
+						 <!-- <img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
 							class="nav-img"
-							alt="dashboard"> -->
+							alt="dashboard">  -->
               <a href="../admin/dashboard.php">Dashboard</a>
 					</div>
 
