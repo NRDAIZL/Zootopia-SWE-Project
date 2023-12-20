@@ -10,17 +10,17 @@
 
 <nav class="nav">
 				<div class="nav-upper-options">
-					<div class="nav-option option1">
-						<!-- <img src=
+					<div class="nav-option option3">
+						 <!-- <img src=
 "https://media.geeksforgeeks.org/wp-content/uploads/20221210182148/Untitled-design-(29).png"
 							class="nav-img"
-							alt="dashboard"> -->
+							alt="dashboard">  -->
               <a href="../admin/dashboard.php">Dashboard</a>
 					</div>
 
 					<div class="option2 nav-option">
 						
-					<a href="../admin/availability.php"> Availability</a>
+					<a href="../admin/availability.php">Working hours</a>
 					</div>
 
 					<div class="nav-option option3">
@@ -41,6 +41,10 @@
 					<div class="nav-option option6">
 						
 					<a href="../admin/pethotel.php"> Hotel</a>
+					</div>
+					<div class="nav-option option3">
+					
+					<a href="../admin/vaccine.php"></a>
 					</div>
 
 					<div class="nav-option logout">

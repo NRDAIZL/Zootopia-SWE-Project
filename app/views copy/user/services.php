@@ -24,7 +24,7 @@
       body{
         width: 100vw;
         height: 100vh;
-        background:#c8e8e0 ;
+        background:white ;
         padding-top: 50 px;
 
       }
@@ -34,7 +34,7 @@
          font-weight: 400;
         }
         h1{
-          color:#be5e5e;
+          color:#dc2020;
           font-size: 45px;
           margin-top: 10px;
 
@@ -80,7 +80,7 @@
         .box .btn{
           width:150px;
           border:none;
-          background-color:#be5e5e;
+          background-color:#dc2020;
           font-size: 17px;
           cursor:pointer;
           font-weight: bold;
@@ -109,28 +109,28 @@
     <body>
     <?php include '../partials/menu.php';?>
   
-<h1>Our Services.</h1>
+<h1>Our Services</h1>
    <div class="row">
       <div class="box">
 <img src="../../public/images/img.02.png">
 <h3>appointment</h3>
 <p> appointment<br>Vets at our clinic do all they can do to help your pet<br></p>
 
-<button class="btn">make an oppointment</button>
+<a class="btn" href="appointment.php">book now</a>
 </div>
 <div class="box">
 <img src="../../public/images/img.04.jpg">
 <h3>grooming</h3>
 <p> We offer services to take good care of your pet<br>grooming is so imortant for every pet health<br></p>
 
-<button class="btn" onclick="toggleHoverr() "hb" ">make an appointment</button>
+<button class="btn" onclick="toggleHoverr() "hb" ">book now</button>
 </div>
 <div class="box">
 <img src="../../public/images/img.03.jpg">
 <h3>pet hotel</h3>
 <p> pet hotel offers various services<br>for your pet's entertainment<br></p>
 
-<button class="btn">book now</button>
+<a class="btn" href="hotelbook.php">book now</a>
 </div>
 <div class="box">
 <img src="../../public/images/img.01.jpg">

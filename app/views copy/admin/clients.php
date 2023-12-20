@@ -23,7 +23,7 @@
 ?>
 </head>
 <?php
-$sql = "SELECT * FROM pets";
+$sql = "SELECT * FROM users";
 
 $result = $conn->query($sql);
 ?>
@@ -66,20 +66,17 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // Output data of each row
         echo "<table>";
-        echo "<tr><th>Pet Name</th><th>Pet Type</th><th>Pet Breed</th><th>Pet Birthdate</th><th>Pet Gender</th><th>Pet Picture</th></tr>";
+        echo "<tr><th>Client Name</th><th>Email</th><th>Phone Number</th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
-            echo "<td>" . $row['pet_name'] . "</td>";
-            echo "<td>" . $row['pet_type'] . "</td>";   
-            echo "<td>" . $row['pet_breed'] . "</td>";
-            echo "<td>" . $row['pet_birthdate'] . "</td>";
-            echo "<td>" . $row['pet_gender'] . "</td>";
-            echo "<td><img src='../../public/images/clients-pets/" . $row['pet_picture'] . "' alt='Pet Picture' style='max-width: 100px;'></td>";
+            echo "<td>" . $row['Fname'] .' '.$row['Lname']. "</td>" ;
+            echo "<td>" . $row['Email'] . "</td>";   
+            echo "<td>" . $row['Phone'] . "</td>";
             echo "</tr>";
         }
-        echo "</table>";
+        echo "</table>";    
     } else {
-        echo "No pets found.";
+        echo "No clients found.";
     }
     ?>
 

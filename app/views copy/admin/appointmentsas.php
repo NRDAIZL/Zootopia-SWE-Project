@@ -28,7 +28,11 @@
 
 </head>
 <?php
-$sql = "SELECT * FROM appointments";
+$sql = "SELECT * FROM appointments a
+JOIN users u ON a.client_id = u.ID
+JOIN pets p on a.pet_id = p.pet_id
+
+";
 
 $result = $conn->query($sql);
 ?>
@@ -79,10 +83,13 @@ $result = $conn->query($sql);
 
 echo '<table border="0" cellspacing="2" cellpadding="2"> 
       <tr> 
-          <th> <font face="Arial">Pet type  </font> </th> 
-          <th> <font face="Arial">Pet name  </font> </th> 
-          <th> <font face="Arial">Appointment day  </font> </th> 
-          <th> <font face="Arial">Appointment time  </font> </th> 
+	  		<th> <font face="Arial">Owner Name  </font> </th> 
+	 		<th> <font face="Arial">Pet name  </font> </th> 
+
+	  		<th> <font face="Arial">Pet type  </font> </th> 
+        	<th> <font face="Arial">Pet breed  </font> </th> 
+          	<th> <font face="Arial">Appointment day  </font> </th> 
+          	<th> <font face="Arial">Appointment time  </font> </th> 
       
       </tr>';
 
@@ -92,17 +99,23 @@ echo '<table border="0" cellspacing="2" cellpadding="2">
 
     /* fetch associative array */
     while ($row = $result->fetch_assoc()) {
-        $field1name = $row["pettype"];
-        $field2name = $row["petname"];
-        $field3name = $row["appointmentday"];
-        $field4name = $row["appointmenttime"];
+		$field1name = $row['Fname'] .' ' . $row['Lname'];
+        $field2name = $row["pet_name"];
+        $field3name = $row["pet_type"];	
+		$field4name = $row["pet_breed"];
+        $field5name = $row["appointmentday"];
+        $field6name = $row["appointmenttime"];
 
 
 		echo '<tr> 
+
 		<td>'.$field1name.'</td> 
 		<td>'.$field2name.'</td> 
 		<td>'.$field3name.'</td> 
 		<td>'.$field4name.'</td> 
+		<td>'.$field5name.'</td> 
+		<td>'.$field6name.'</td> 
+
 	
 	</tr>';
         

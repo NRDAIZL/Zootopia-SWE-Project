@@ -18,28 +18,7 @@ if(!empty($_SESSION['ID'])) {
 	echo "<h1>Welcome ".$_SESSION['Fname']."</h1>";
     echo"<a href='Logout.php'>SignOut Here</a>";
 
-  
-
-	
-}
-
-else{
-    var_dump($_SESSION);
-
-	echo "<h1>Welcome To Zootopia!</h1>";
-	
-    
-
-    echo"First time? " , "<a href='SignUp.php'>Signup Here.</a>" ;
-
-	
-    
-    echo"  Already a customer? " , "<a href='Login.php'>Login.</a>", "<hr>";
-	
-}
-?>
-
-<div id="image_row1">
+    echo '<div id="image_row1"> 
     <table id="TableContents">
         <th>
             <a href="services.php"> 
@@ -51,6 +30,8 @@ else{
                 <button id="Appoitments">Appointments</button>
             </a>
         </th>
+        
+
         <th>
             <a href="hotelbook.php">
                 <button id="Host">Pet Hosting</button>
@@ -58,10 +39,43 @@ else{
         </th>
         <th>
             <a href="vaccine.php">
-                <button id="Vaccines" >Vaccines</button>
+                <button id="Vaccines">Vaccines</button>
             </a>
         </th>
     </table>
-</div>
+</div>';
+}
+    
+else{
+    // var_dump($_SESSION);
+
+    
+
+	echo "<h1>Welcome To Zootopia!</h1>";
+	
+    
+
+    // echo"First time? " , "<a href='SignUp.php'>Signup Here.</a>" ;
+
+	
+    
+    // echo"  Already a customer? " , "<a href='Login.php'>Login.</a>", "<hr>";
+    echo "<label>First time ?</label>";
+    echo"<a href='SignUp.php'>";
+echo "<button>Signup Here.</button>";
+
+
+
+echo "<label>Already a customer ?</label>";
+    echo"<a href='Login.php'>";
+echo "<button>Login.</button>";
+
+
+
+
+
+
+}
+?>
 
 </html> 

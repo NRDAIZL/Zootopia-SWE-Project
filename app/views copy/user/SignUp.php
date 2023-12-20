@@ -6,6 +6,7 @@
   <html>
     <head>
       <title>Sign Up</title>
+      <script src="eventHandler.js"></script>
       <link rel= "stylesheet" href="../../public/css/designSignup.css"/>
     </head>
 
@@ -35,6 +36,13 @@
               <span></span>
               <label>Password</label>
             </div>
+            <!-- //////////////// -->
+            <div class="txt_field">
+              <input type="Phone" name="Phone" required>
+              <span></span>
+              <label>Phone number</label>
+            </div>
+            <!-- ////////// -->
               <input type="submit" value="Submit" name="Submit">
             <div class="signup_link">
               <p>Have an account?</p><a class="ho" href="../../views/user/Login.php">Sign in</a>
@@ -49,22 +57,11 @@
     $Lname=htmlspecialchars($_POST["LastName"]);
     $Email=htmlspecialchars($_POST["Email"]);
     $Password=htmlspecialchars($_POST["Password"]);
-    
+    $phone=htmlspecialchars($_POST["Phone"]);
 
       //insert it to database 
-
-    if(strlen($Fname)< 3){ //Validated Name
-      echo "Name too short, please enter a suitable name.";
-    }
-    elseif(str_contains($Email, "@gmail.com") or str_contains($Email, "@hotmail.com") or str_contains($Email, "@outlook.com")){ //Validate Email
-      echo "Please enter valid Email.";
-    }
-    elseif(strlen($Password)<6){ //Validate Password
-      echo "Password should be 7 characters or more.";
-    }
-    else{
-      $sql = "INSERT INTO users(Fname,Lname,Email,Password)
-      values('$Fname','$Lname','$Email','$Password')";
+      $sql = "INSERT INTO users(Fname,Lname,Email,Password,role)
+      values('$Fname','$Lname','$Email','$Password','0')";
 
       $result=mysqli_query($conn,$sql);
     
@@ -84,7 +81,7 @@ if ($row = mysqli_fetch_assoc($result)) {
     $_SESSION["Lname"] = $row["Lname"];
     $_SESSION["Email"] = $row["Email"];
     $_SESSION["Password"] = $row["Password"];
-    
+    $_SESSION["role"] = $row["role"];
     header("Location: Home.php");
     exit();
   } else {
@@ -94,7 +91,7 @@ if ($row = mysqli_fetch_assoc($result)) {
       echo "Error: " . mysqli_error($conn);
   }
 }
-    }
+    
   ?>
 
     </body>
