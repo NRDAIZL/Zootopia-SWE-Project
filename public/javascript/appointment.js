@@ -1,20 +1,55 @@
+// Connect to the database
+connection.connect((err) => {
+    if (err) {
+      console.error('Error connecting to database:', err);
+      return;
+    }
+//}
+});
+
+
+
+
+
+
+//}          
 function updateaptime() {
-    // var apday1=document.getElementById("apday").value
-  //alert(apday1)
-    // console.log("inn     funccccc");
- //  alert("hi from func");
- // return 0;
+    
+console.log("hiiibatata");
+
+//   // Run your SQL query to get the count of rows
+//   const query = 'SELECT COUNT(*) AS row_count FROM your_table';
+//   connection.query(query, (err, result) => {
+//     if (err) {
+//       console.error('Error executing query:', err);
+//       return;
+//     }
+
+//     // Access the row count from the result
+//     //const rowCount = result[0].row_count;
+//     console.log('Number of rows:', rowCount);
+
+//     // Close the database connection
+//     connection.end();
+//   });  
+// //
+// //     var apday1=document.getElementById("apday").value
+// //   alert(apday1)
+// //     console.log("inn     funccccc");
+// //   alert("hi from func");
+// //  return 0;
    
- console.log("hih     elllc");
-
-               }
-
-              // for(i=0;i<rows.length;i++){
+//  console.log("hooooo iiiiiiiiiiiiiibtnada3");
+//  //var rows = document.getElementById("aptime").value;
+//  const rowCount = result[0].row_count;
+//          for(i=0;i<rowCount.length;i++){
 //                     // var opt=document.createElement("option")
 //                     // opt.text=timesun[i]
 //                     // document.getElementById("aptime").appendChild(opt)
 //                     console.log("hi");
 //                 }
+            }
+      
 
 
 
