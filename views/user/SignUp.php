@@ -60,21 +60,8 @@
     $phone=htmlspecialchars($_POST["Phone"]);
 
       //insert it to database 
-
-    if(strlen($Fname)< 3){ //Validated Name
-      echo "Name too short, please enter a suitable name.";
-    }
-    elseif(strpos($Email, "@gmail.com") === false && strpos($Email, "@hotmail.com") === false && strpos($Email, "@outlook.com") === false){ //Validate Email
-      echo "Please enter valid Email.";
-    }
-    
-    
-    elseif(strlen($Password)<6){ //Validate Password
-      echo "Password should be 7 characters or more.";
-    }
-    else{
-      $sql = "INSERT INTO users(FirstName,LastName,Email,Password)
-      values('$Fname','$Lname','$Email','$Password')";
+      $sql = "INSERT INTO users(Fname,Lname,Email,Password,role)
+      values('$Fname','$Lname','$Email','$Password','0')";
 
       $result=mysqli_query($conn,$sql);
     
@@ -94,7 +81,7 @@ if ($row = mysqli_fetch_assoc($result)) {
     $_SESSION["Lname"] = $row["Lname"];
     $_SESSION["Email"] = $row["Email"];
     $_SESSION["Password"] = $row["Password"];
-    
+    $_SESSION["role"] = $row["role"];
     header("Location: Home.php");
     exit();
   } else {
@@ -104,7 +91,7 @@ if ($row = mysqli_fetch_assoc($result)) {
       echo "Error: " . mysqli_error($conn);
   }
 }
-    }
+    
   ?>
 
     </body>
