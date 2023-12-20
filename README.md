@@ -4,7 +4,8 @@ We hope you find our solution useful
 The ZooTopia solution is a website consisting of a home, appointments page, login page, and signup page. 
 This website was created as a digital solution for the Zootopia pet clinic and servicer
 
-![GANTT CHART](https://github.com/NRDAIZL/Zootopia-SWE-Project/assets/148634411/5f86ce56-511a-49f3-b417-e4645926dd6a)
+![WhatsApp Image 2023-12-20 at 02 38 11_6323d1f3](https://github.com/NRDAIZL/Zootopia-SWE-Project/assets/148634411/6ab298c5-cd08-4654-9277-0ae5f56bcdee)
+
 
 After opening the website, you are greeted with a home page. And once you log in, you are met with all the options included in the website. 
 
