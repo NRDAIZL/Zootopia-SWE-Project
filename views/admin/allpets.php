@@ -23,7 +23,9 @@
 ?>
 </head>
 <?php
-$sql = "SELECT * FROM pets";
+$sql = "SELECT * FROM pets p
+JOIN users u ON u.ID = p.owner_id
+";
 
 $result = $conn->query($sql);
 ?>
@@ -56,9 +58,29 @@ $result = $conn->query($sql);
 				</div>
                 
 			</div>		
+			
             	<div class="report-container">
                 <div class="report-header">
 					<h1 class="recent-Articles">Pets</h1>
+					<form method="post">
+  <label for="petType">pet type</label>
+  <select id="petType" name="petType" >
+
+<?php 
+	$sqlp = "SELECT DISTINCT pet_type FROM pet_breed p";
+	$pet_types = $conn->query($sqlp);
+
+
+        while ($row = $pet_types->fetch_assoc()) {
+			$petType = $row['pet_type'];
+
+			echo "<option value=\"$petType\">$petType</option>";
+        }
+
+?>
+  </select>
+  <button type="submit">Search Bookings</button>
+</form>
 					<button class="view">View All</button>
 				</div>
 
@@ -66,9 +88,10 @@ $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         // Output data of each row
         echo "<table>";
-        echo "<tr><th>Pet Name</th><th>Pet Type</th><th>Pet Breed</th><th>Pet Birthdate</th><th>Pet Gender</th><th>Pet Picture</th></tr>";
+        echo "<tr><th>Owner Name</th><th>Pet Name</th><th>Pet Type</th><th>Pet Breed</th><th>Pet Birthdate</th><th>Pet Gender</th><th>Pet Picture</th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
+			echo "<td>" . $row['Fname'] .' ' .$row['Lname'] . "</td>";
             echo "<td>" . $row['pet_name'] . "</td>";
             echo "<td>" . $row['pet_type'] . "</td>";   
             echo "<td>" . $row['pet_breed'] . "</td>";
