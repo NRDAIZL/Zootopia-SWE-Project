@@ -12,6 +12,8 @@ After opening the website, you are greeted with a home page. And once you log in
 The files on Github are consisting of views, where all the forms viewd by the user are located, images, whwere the images used by the website are located, css, where the style sheets used by the forms are
 located, and finally, css, where the css files are located. 
 
+We used the SQL database through XAMPP, it has given us many freedoms to create this website.
+
 Config folder houses the database configuration.
 
 The Zootopia solution has taken a lot of time and effort to create, we hope you find it it helpful!!
