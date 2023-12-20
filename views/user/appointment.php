@@ -49,9 +49,41 @@
 
       <br><br>
       <label for="aptime" class="choose">Choose time:</label>
-      <select class="selectt" name="aptime" id="aptime" required>
-        <option class="optionn" value="0">select time</option>
-        
+      <!-- <select class="selectt" name="aptime" id="aptime" required> -->
+        <!-- <option class="optionn" value="0">select time</option> -->
+        <?php
+// Assuming $conn is your database connection
+
+// Fetch distinct values from the 'slotStart' column
+$query = "SELECT DISTINCT slotStart FROM availabletime";
+$result = mysqli_query($conn, $query);
+
+// Check if the query was successful
+if ($result) {
+    // Start the dropdown list
+    echo '<select class="selectt" name="slotStartDropdown">';
+
+    // Loop through the result set and add options to the dropdown
+    while ($row = mysqli_fetch_assoc($result)) {
+        $slotStartValue = $row['slotStart'];
+        echo "<option value='$slotStartValue'>$slotStartValue</option>";
+    }
+
+    // End the dropdown list
+    echo '</select>';
+    
+    // Free the result set
+    mysqli_free_result($result);
+} else {
+    // Handle the case where the query was not successful
+    echo 'Error fetching slotStart values: ' . mysqli_error($conn);
+}
+
+// Close the database connection
+mysqli_close($conn);
+?>
+
+
       </select>
       <div id="apTimeError" class="errx or-message"></div>
       <br><br>

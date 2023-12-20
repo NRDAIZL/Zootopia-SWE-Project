@@ -101,16 +101,7 @@ $newDate = date("d-m-Y H:i:s", strtotime($date.' +1 hour'));
 ? -->
 
 
-
-
 <!-- //////////////////////// -->
-
-
-
-
-
-
-
 
 <?php
 
@@ -135,17 +126,17 @@ if (isset($_POST['submit'])) {
                 if ($selectedd == "sun") {
                     mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Sunday', '$startTime', '$endTime', '$number')");
                 } elseif ($selectedd == "mon") {
-                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Monday', '$startTime', '$endTime')");
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Monday', '$startTime', '$endTime', '$number')");
                 } elseif ($selectedd == "tues") {
-                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Tuesday', '$startTime', '$endTime')");
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Tuesday', '$startTime', '$endTime', '$number')");
                 } elseif ($selectedd == "wends") {
-                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Wendsday', '$startTime', '$endTime')");
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Wendsday', '$startTime', '$endTime', '$number')");
                 } elseif ($selectedd == "thurs") {
-                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Thursday', '$startTime', '$endTime')");
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Thursday', '$startTime', '$endTime', '$number')");
                 } elseif ($selectedd == "fri") {
-                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Friday', '$startTime', '$endTime')");
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Friday', '$startTime', '$endTime', '$number')");
                 } elseif ($selectedd == "satur") {
-                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime) VALUES ('Saturday', '$startTime', '$endTime')");
+                    mysqli_query($conn, "INSERT INTO availabletime (days, starttime, endtime, slotStart) VALUES ('Saturday', '$startTime', '$endTime', '$number')");
                 }
             }
         }
